@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Kalnia:wght@100..700&display=swap');
 :root {
   --cor-primaria: #f29bdb;
   --cor-secundaria: #f2d0e9;
@@ -12,7 +12,9 @@
   box-sizing: border-box;
   font-family: 'Inter', sans-serif;
 }
-
+.tipografia {
+  font-family: Kalnia;
+}
 .container {
   overflow: visible;
   display: flex;
@@ -44,14 +46,37 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
   width: 50%;
   height: 100%;
   border-radius: 15px;
   background-color: var(--cor-fundo);
+  padding: 1rem;
+  gap: auto;
+}
+
+.call-to-action {
+  gap: 1rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+
+}
+
+.titulo-call-to-action {
+  font-size: 2.2rem;
+  color: var(--cor-terciaria);
+}
+
+.paragrafo-call-to-action {
+  font-size: 1.2rem;
+  font-weight: 600;
 }
 
 .imagem-login {
-  width: 25rem;
+  width: 75%;
 }
 
 .formulario {
