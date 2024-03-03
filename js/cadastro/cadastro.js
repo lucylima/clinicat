@@ -1,3 +1,12 @@
+const $formularioCadastro = document.getElementsByClassName('formulario')[0]
+const $tipoAnimal = document.getElementsByClassName('input-radio-animal')
+const $especialidade = document.getElementsByClassName('especialidades')
+const $nomeTutor = document.getElementById('nome')
+const $nomePet = document.getElementById('nomePet')
+
+let itens
+let id
+
 class Animal {
   constructor(id, nome, raca, especialidade){
     this.id = id
@@ -17,5 +26,7 @@ class Usuario {
   }
 }
 
-let itens
-let id
+$formularioCadastro.addEventListener('submit', e => {
+  e.preventDefault()
+  console.log('Deu certo')
+})

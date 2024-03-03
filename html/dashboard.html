@@ -71,30 +71,35 @@
               </div>
   
               <div class="campo-formulario">
-                <label for="email" class="label-formulario">Nome do animal</label>
-                <input type="email" name="email" id="email" class="input-formulario" />
+                <label for="nomePet" class="label-formulario">Nome do animal</label>
+                <input type="text" name="nomePet" id="nomePet" class="input-formulario" />
               </div>
             </div>
           
             <div class="campo-formulario">
               <div class="campo-tipo-animal">
-                <label for="">Tipo de animal</label>
-                <label for="">
-                  Cachorro
-                  <input type="radio" name="" id="">
-                </label>
-                <label for="">
-                  Gato
-                  <input type="radio" name="" id="">
-                </label>
-                <label for="">
-                  Silvestre
-                  <input type="radio" name="" id="">
-                </label>
+                <h4 class="label-formulario">Tipo de animal</h4>
+                <div class="campo-grupo">
+                  <label for="cachorro" class="label-radio">
+                    Cachorro
+                    <img src="../assets/dashboard/dashboard-modal/cachorro-icone.png" alt="" class="icone-animal">
+                    <input type="radio" name="tipo-animal" id="cachorro" value="cachorro" class="input-radio-animal" required>
+                  </label>
+                  <label for="gato" class="label-radio">
+                    Gato
+                     <img src="../assets/dashboard/dashboard-modal/gato-icone.png" alt="" class="icone-animal">
+                    <input type="radio" name="tipo-animal" id="gato" value="gato" class="input-radio-animal" required>
+                  </label>
+                  <label for="silvestre" class="label-radio">
+                    Silvestre
+                     <img src="../assets/dashboard/dashboard-modal/coelho-icone.png" alt="" class="icone-animal">
+                    <input type="radio" name="tipo-animal" id="silvestre" value="silvestre" class="input-radio-animal" required>
+                  </label>
+                </div>
               </div>
             </div>
-            <div>
-              <select name="especialidade" id="especialidade">
+          
+              <select name="especialidade" id="especialidade" class="especialidades" required>
                 <option selected="" disabled="" value="">Especialidade</option>
                 <option value="Outra">Não sei / OUTRA</option>
                 <option value="Acupuntura">Acupuntura</option>
@@ -120,15 +125,15 @@
                 <option value="Pneumologista">Pneumologista</option>
                 <option value="Especialista_silvestres">Especialista em Silvestres</option>
               </select> 
-            </div>
-           
+    
 
-            <input type="submit" value="Registrar" class="botao-enviar-cadastro" />
+            <input type="submit" value="Cadastrar" class="botao-enviar-cadastro" />
           </form>
         </div>
       </div>
     </div>
     <script src="../js/dashboard/dashboard.js"></script>
+    <script src="../js/dashboard/dashboard-modal.js"></script>
     <script src="../js/cadastro/cadastro.js"></script>
   </body>
 </html>
