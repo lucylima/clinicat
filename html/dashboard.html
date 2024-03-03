@@ -23,10 +23,10 @@
         <nav class="sidebar">
           <h2 class="tipografia">Clinicat</h2>
           <ul class="menu">
-            <li class="menu-opcao inicio"><i class="fa-solid fa-house"></i>Início</li>
-            <li class="menu-opcao consultas"><i class="fa-solid fa-book-medical"></i>Minhas consultas</li>
-            <li class="menu-opcao conta"><i class="fa-solid fa-user"></i>Minha conta</li>
-            <li class="menu-opcao pets"><i class="fa-solid fa-paw"></i>Meus bichinhos</li>
+            <li class="menu-opcao" id="inicio"><i class="fa-solid fa-house"></i>Início</li>
+            <li class="menu-opcao" id="consultas"><i class="fa-solid fa-book-medical"></i>Minhas consultas</li>
+            <li class="menu-opcao" id="conta"><i class="fa-solid fa-user"></i>Minha conta</li>
+            <li class="menu-opcao" id="pets"><i class="fa-solid fa-paw"></i>Meus bichinhos</li>
           </ul>
           <div class="perfil-usuario">
             <img src="http://placekitten.com/40/40" alt="foto de perfil do usuário" class="foto-usuario">
@@ -58,29 +58,72 @@
     </main>
     <div class="modal-cadastro">
       <div class="cadastro-conteudo">
-        <h3 class="">Novo</h3>
-        <div class="formulario-registro">
+        <div class="modal-header">
+             <h3 class="modal-titulo">Novo</h3>
+             <i class="fa-solid fa-x modal-fechar"></i>
+        </div>
+        <div class="formulario-cadastro">
           <form class="formulario">
-            <div class="campo-formulario">
-              <label for="nome" class="label-formulario">Nome Completo</label>
-              <input type="text" name="nome" id="nome" class="input-formulario" />
+            <div class="campo-grupo">
+              <div class="campo-formulario">
+                <label for="nome" class="label-formulario">Nome do tutor</label>
+                <input type="text" name="nome" id="nome" class="input-formulario" />
+              </div>
+  
+              <div class="campo-formulario">
+                <label for="email" class="label-formulario">Nome do animal</label>
+                <input type="email" name="email" id="email" class="input-formulario" />
+              </div>
             </div>
-
+          
             <div class="campo-formulario">
-              <label for="email" class="label-formulario">E-mail</label>
-              <input type="email" name="email" id="email" class="input-formulario" />
+              <div class="campo-tipo-animal">
+                <label for="">Tipo de animal</label>
+                <label for="">
+                  Cachorro
+                  <input type="radio" name="" id="">
+                </label>
+                <label for="">
+                  Gato
+                  <input type="radio" name="" id="">
+                </label>
+                <label for="">
+                  Silvestre
+                  <input type="radio" name="" id="">
+                </label>
+              </div>
             </div>
-
-            <div class="campo-formulario">
-              <label for="password" class="label-formulario">Senha</label>
-              <input type="password" name="senha" id="senha" class="input-formulario" />
+            <div>
+              <select name="especialidade" id="especialidade">
+                <option selected="" disabled="" value="">Especialidade</option>
+                <option value="Outra">Não sei / OUTRA</option>
+                <option value="Acupuntura">Acupuntura</option>
+                <option value="Ambulatorio_dor">Ambulatório de Dor</option>
+                <option value="Cardiologia">Cardiologia</option>
+                <option value="Castracao">Castração</option>
+                <option value="Clinica_geral">Clínica Geral</option>
+                <option value="Clinica_cirurgica">Clínica Cirurgica</option>
+                <option value="Dermatologia">Dermatologia</option>
+                <option value="Endocrinologia">Endocrinologia</option>
+                <option value="Especialista_felinos">Especialista em Felinos</option>
+                <option value="Fisioterapia">Fisioterapia</option>
+                <option value="Gastroenterologista">Gastroenterologista</option>
+                <option value="Hematologista">Hematologista</option>
+                <option value="Nefrologista">Nefrologista</option>
+                <option value="Neurologista">Neurologista</option>
+                <option value="Nutricionista">Nutricionista</option>
+                <option value="Odontologia">Odontologia</option>
+                <option value="Oftalmologista">Oftalmologista</option>
+                <option value="Oncologista">Oncologista</option>
+                <option value="Ortopedista">Ortopedista</option>
+                <option value="Paliativismo">Paliativismo</option>
+                <option value="Pneumologista">Pneumologista</option>
+                <option value="Especialista_silvestres">Especialista em Silvestres</option>
+              </select> 
             </div>
+           
 
-            <input type="submit" value="Registrar" class="botao-enviar" />
-            <p class="ja-tenho-conta">
-              Já tem cadastro?
-              <a href="../index.html" class="link-entrar">Entrar</a>
-            </p>
+            <input type="submit" value="Registrar" class="botao-enviar-cadastro" />
           </form>
         </div>
       </div>
