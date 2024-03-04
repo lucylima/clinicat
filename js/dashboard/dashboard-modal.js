@@ -8,10 +8,6 @@ const mostrarModal = () => {
   $modal.style.display = 'block'
 }
 
-const animalSelecionado = () => {
-
-}
-
 for (let item of $adicionarNovo) {
   item.addEventListener('click', mostrarModal)
 }
