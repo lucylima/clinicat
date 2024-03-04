@@ -1,13 +1,13 @@
+import banco from '../banco-de-dados/banco.js'
+
 const $formularioCadastro = document.getElementsByClassName('formulario')[0]
-const $tipoAnimal = document.getElementsByClassName('input-radio-animal') 
+const $tipoAnimal = document.getElementsByClassName('input-radio-animal')
 const $especialidade = document.getElementsByClassName('especialidades')[0]
 const $nomeTutor = document.getElementById('nome')
 const $nomePet = document.getElementById('nomePet')
 
-let listaDePets = []
-
 class Animal {
-  constructor(id, nome, raca, especialidade, dono){
+  constructor(id, nome, raca, especialidade, dono) {
     this.id = id
     this.nome = nome
     this.raca = raca
@@ -16,24 +16,26 @@ class Animal {
   }
 }
 
-class Usuario {
-  constructor(nome, usuario, email, senha, pets){
-    this.nome = nome
-    this.usuario = usuario
-    this.email = email
-    this.senha = senha
-    this.pets = pets
-  }
-}
 
 $formularioCadastro.addEventListener('submit', e => {
   e.preventDefault()
+  let tipoAnimal
+
+  for (let radio of $tipoAnimal) {
+    if (radio.checked) {
+      tipoAnimal = radio.value
+    }
+  }
+
   let novoPet = new Animal(
-    listaDePets.length + 1,
+    1,
     $nomePet.value,
-    $tipoAnimal.value,
+    tipoAnimal,
     $especialidade.value,
     $nomeTutor.value
   )
-  console.log(novoPet)
+  banco.pets.push(novoPet)
+  console.log(banco)
 })
+
+console.log(banco)
