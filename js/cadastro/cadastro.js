@@ -1,10 +1,19 @@
-import banco from '../banco-de-dados/banco.js'
-
 const $formularioCadastro = document.getElementsByClassName('formulario')[0]
 const $tipoAnimal = document.getElementsByClassName('input-radio-animal')
 const $especialidade = document.getElementsByClassName('especialidades')[0]
 const $nomeTutor = document.getElementById('nome')
 const $nomePet = document.getElementById('nomePet')
+const $index = document.getElementById('nome').dataset.index
+
+const definirLocalStorage = (banco) => localStorage.setItem("banco_clinicat", JSON.stringify(banco))
+const pegarLocalStorage = () => JSON.parse(localStorage.getItem('banco_clinicat')) ?? []
+const lerBanco = () => pegarLocalStorage()
+
+const salvarPet = (pet) => {
+  const banco = pegarLocalStorage()
+  banco.push(pet)
+  definirLocalStorage(pet)
+}
 
 class Animal {
   constructor(id, nome, raca, especialidade, dono) {
@@ -16,7 +25,7 @@ class Animal {
   }
 }
 
-
+// o cadastro que for feito aqui irá direto para banco.pets
 $formularioCadastro.addEventListener('submit', e => {
   e.preventDefault()
   let tipoAnimal
@@ -28,14 +37,21 @@ $formularioCadastro.addEventListener('submit', e => {
   }
 
   let novoPet = new Animal(
-    1,
+    1, 
     $nomePet.value,
     tipoAnimal,
     $especialidade.value,
     $nomeTutor.value
   )
-  banco.pets.push(novoPet)
-  console.log(banco)
+  salvarPet(novoPet)
+  $modal.style.display = "none"
+  Toastify({
+    text: "Pet cadastrado com sucesso!",
+    duration: 4000,
+    style: {
+      background: "linear-gradient(25deg, rgba(106,102,242,1) 1%, rgba(124,120,247,1) 50%, rgba(156,153,255,1) 100%)",
+    }
+  }).showToast();
 })
 
-console.log(banco)
+console.log(pegarLocalStorage())

@@ -1,1 +1,0 @@
-import banco from "../banco-de-dados/banco"
