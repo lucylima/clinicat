@@ -5,15 +5,15 @@ const $nomeTutor = document.getElementById('nome')
 const $nomePet = document.getElementById('nomePet')
 const $index = document.getElementById('nome').dataset.index
 
-const definirLocalStorage = (banco) => localStorage.setItem("banco_clinicat", JSON.stringify(banco))
-const pegarLocalStorage = () => JSON.parse(localStorage.getItem('banco_clinicat')) ?? []
+const definirLocalStorage = (banco) => localStorage.setItem("banco_clinicat_pets", JSON.stringify(banco))
+const pegarLocalStorage = () => JSON.parse(localStorage.getItem('banco_clinicat_pets')) ?? []
 const lerBanco = () => pegarLocalStorage()
 
 const salvarPet = (pet) => {
   const banco = pegarLocalStorage()
   banco.push(pet)
   definirLocalStorage(pet)
-}
+} 
 
 class Animal {
   constructor(id, nome, raca, especialidade, dono) {
@@ -53,5 +53,6 @@ $formularioCadastro.addEventListener('submit', e => {
     }
   }).showToast();
 })
+
 
 console.log(pegarLocalStorage())
