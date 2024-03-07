@@ -7,7 +7,7 @@ const $index = document.getElementById('nome').dataset.index
 
 const definirLocalStorage = (banco) => localStorage.setItem("banco_clinicat_pets", JSON.stringify(banco))
 const pegarLocalStorage = () => JSON.parse(localStorage.getItem('banco_clinicat_pets')) ?? []
-const lerBanco = () => pegarLocalStorage()
+export const lerBanco = () => pegarLocalStorage()
 
 const salvarPet = (pet) => {
   const banco = pegarLocalStorage()
@@ -33,7 +33,6 @@ class Animal {
   }
 }
 
-// o cadastro que for feito aqui irá direto para banco.pets
 $formularioCadastro.addEventListener('submit', e => {
   e.preventDefault()
   let tipoAnimal
@@ -65,8 +64,5 @@ $formularioCadastro.addEventListener('submit', e => {
       background: "linear-gradient(25deg, rgba(106,102,242,1) 1%, rgba(124,120,247,1) 50%, rgba(156,153,255,1) 100%)",
     }
   }).showToast();
-  console.log(novoPet)
-  console.log(index) 
+  salvarPet(novoPet)
 })
-
-
