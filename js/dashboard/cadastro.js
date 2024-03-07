@@ -12,8 +12,16 @@ const lerBanco = () => pegarLocalStorage()
 const salvarPet = (pet) => {
   const banco = pegarLocalStorage()
   banco.push(pet)
-  definirLocalStorage(pet)
+  definirLocalStorage(banco)
 } 
+
+const limparCampos = () => {
+  $nomeTutor.value = ''
+  $nomePet.value = '' 
+  $especialidade.value = ''
+  for (let radio of $tipoAnimal) radio.checked = false
+  document.getElementById('nome').dataset.index = 'novo'
+}
 
 class Animal {
   constructor(id, nome, raca, especialidade, dono) {
@@ -30,21 +38,26 @@ $formularioCadastro.addEventListener('submit', e => {
   e.preventDefault()
   let tipoAnimal
 
+  const index = document.getElementById('nome').dataset.index
+
   for (let radio of $tipoAnimal) {
-    if (radio.checked) {
-      tipoAnimal = radio.value
-    }
+    if (radio.checked) tipoAnimal = radio.value 
   }
 
   let novoPet = new Animal(
-    1, 
+    index, 
     $nomePet.value,
     tipoAnimal,
     $especialidade.value,
     $nomeTutor.value
   )
-  salvarPet(novoPet)
-  $modal.style.display = "none"
+  if(index === 'novo'){
+    salvarPet(novoPet)
+    limparCampos()
+    $modal.style.display = "none"
+  }else {
+    
+  }
   Toastify({
     text: "Pet cadastrado com sucesso!",
     duration: 4000,
@@ -52,7 +65,8 @@ $formularioCadastro.addEventListener('submit', e => {
       background: "linear-gradient(25deg, rgba(106,102,242,1) 1%, rgba(124,120,247,1) 50%, rgba(156,153,255,1) 100%)",
     }
   }).showToast();
+  console.log(novoPet)
+  console.log(index) 
 })
 
 
-console.log(pegarLocalStorage())
