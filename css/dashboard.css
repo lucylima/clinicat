@@ -28,6 +28,7 @@ body {
 .container-principal {
   display: flex;
   flex-direction: column;
+  flex-wrap: wrap;
   width: 100%;
   height: 100%;
   gap: 1rem;

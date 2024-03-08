@@ -1,23 +1,20 @@
 const $adicionarNovo = document.getElementsByClassName('adicionar-novo')
 const $modal = document.getElementsByClassName('modal-cadastro')[0]
-const $labelAnimal = document.getElementsByClassName('label-radio')
 const $fecharModal = document.getElementsByClassName('modal-fechar')[0]
 
+const mostrarModal = (operacao) => {
+  if(operacao === 'editar'){
 
-const mostrarModal = () => {
-  console.log('click')
+  } else if(operacao === 'cadastrar'){
+    
+  }
   $modal.style.display = 'block'
 }
+const fecharModal = () => $modal.style.display = 'none'
 
-for (let item of $adicionarNovo) {
-  item.addEventListener('click', mostrarModal)
-}
+for (let item of $adicionarNovo) item.addEventListener('click', mostrarModal)
 
+$fecharModal.onclick = () => fecharModal()
+window.onclick = (event) => { if (event.target == $modal) fecharModal() }
 
-$fecharModal.onclick = () => $modal.style.display = 'none'
-
-window.onclick = function (event) {
-  if (event.target == $modal) {
-    $modal.style.display = "none";
-  }
-}
+export { mostrarModal, fecharModal }
