@@ -93,6 +93,7 @@ $formularioCadastro.addEventListener('submit', e => {
 
 const criarCards = () => {
   let listaDosPets = lerBanco()
+  
   listaDosPets.forEach((pet) => {
     let $card = document.createElement('div')
     let $cardImagem = document.createElement('img')
@@ -121,7 +122,6 @@ const criarCards = () => {
         break
     }
     
-
     $cardTitulo.innerText = pet.nome
     $cardSubtitulo.innerText = pet.raca
     $cardEspecialidade.innerText = pet.especialidade
@@ -132,7 +132,6 @@ const criarCards = () => {
 
     $botaoEditar.addEventListener('click', () => { editarPet(pet) })
     $botaoDeletar.addEventListener('click', () => { deletarPet(pet) })
-
 
     $card.appendChild($cardImagem)
     $card.appendChild($cardTitulo)
