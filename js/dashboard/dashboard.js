@@ -72,13 +72,9 @@ for (let item of $menu) {
       case 'inicio':
         $operacao.innerHTML = 'Início'
         break;
-      case 'consultas':
-        $operacao.innerHTML = 'Minhas consultas'
-        break;
     }
   })
 }
-
 
 atualizarCards()
 

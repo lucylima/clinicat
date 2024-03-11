@@ -1,7 +1,7 @@
-let $nome = document.getElementById('nome')
-let $email = document.getElementById('email')
-let $senha = document.getElementById('senha')
-let $formulario = document.getElementsByClassName('formulario')[0]
+const $nome = document.getElementById('nome')
+const $email = document.getElementById('email')
+const $senha = document.getElementById('senha')
+const $formulario = document.getElementsByClassName('formulario-registro')[0]
 
 export class Usuario {
   constructor(nome, email, senha){
@@ -23,7 +23,7 @@ const limparCampos = () => {
 
 $formulario.addEventListener('submit', e => {
   e.preventDefault()
-  const banco = pegarLocalStorage()
+  const banco = lerBanco()
   const novoUsuario = new Usuario(
     $nome.value,
     $email.value,
@@ -34,5 +34,3 @@ $formulario.addEventListener('submit', e => {
   limparCampos()
   window.location.href = '../index.html'
 })
-console.log(lerBanco())
-

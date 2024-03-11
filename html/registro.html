@@ -27,24 +27,38 @@
           />
         </div>
         <div class="formulario-registro">
-          <form class="formulario">
+          <form class="formulario-registro formulario">
             <h3 class="tipografia titulo-call-to-action">Clinicat</h3>
 
             <div class="campo-formulario">
               <label for="nome" class="label-formulario">Nome Completo</label>
-              <input type="text" name="nome" id="nome" class="input-formulario" />
+              <input
+                type="text"
+                name="nome"
+                id="nomeUsuario"
+                class="input-formulario usuario"
+              />
             </div>
 
             <div class="campo-formulario">
               <label for="email" class="label-formulario">E-mail</label>
-              <input type="email" name="email" id="email" class="input-formulario" />
+              <input
+                type="email"
+                name="email"
+                id="email"
+                class="input-formulario email"
+              />
             </div>
 
             <div class="campo-formulario">
               <label for="password" class="label-formulario">Senha</label>
-              <input type="password" name="senha" id="senha" class="input-formulario" />
+              <input
+                type="password"
+                name="senha"
+                id="senha"
+                class="input-formulario"
+              />
             </div>
-
             <input type="submit" value="Registrar" class="botao-enviar" />
             <p class="ja-tenho-conta">
               Já tem cadastro?
@@ -54,6 +68,6 @@
         </div>
       </section>
     </main>
-    <script src="../js/registro/registro.js"></script>
+    <script src="../js/registro/registro.js" type="module"></script>
   </body>
 </html>
