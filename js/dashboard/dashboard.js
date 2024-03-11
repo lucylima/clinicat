@@ -1,45 +1,18 @@
-import { mostrarModal, fecharModal } from './dashboard-modal.js'
+import { mostrarModal } from './dashboard-modal.js'
+import { criarCards } from './dashboard-cards.js'
+import { $enviarForm } from './dashboard-cadastro.js'
 
-const $container = document.getElementsByClassName('container-principal')[0]
-const $semItems = document.getElementsByClassName('sem-items')[0]
-const $menu = document.getElementsByClassName('menu-opcao')
-const $operacao = document.getElementsByClassName('categoria-menu')[0]
-const $formularioCadastro = document.getElementsByClassName('formulario')[0]
-const $tipoAnimal = document.getElementsByClassName('input-radio-animal')
-const $especialidade = document.getElementsByClassName('especialidades')[0]
-const $nomeTutor = document.getElementById('nome')
-const $nomePet = document.getElementById('nomePet')
+const operacao = ''
 
 const definirLocalStorage = (banco) => localStorage.setItem("banco_clinicat_pets", JSON.stringify(banco))
 const pegarLocalStorage = () => JSON.parse(localStorage.getItem('banco_clinicat_pets')) ?? []
 const lerBanco = () => pegarLocalStorage()
 
-const salvarPet = (pet) => {
-  const banco = pegarLocalStorage()
-  banco.push(pet)
-  definirLocalStorage(banco)
-}
-
-const editarPet = (id) => {
-  mostrarModal()
-  console.log(`Editando ${id}`)
-  console.log('click')
-}
-
-const deletarPet = (id) => {
-  const banco = lerBanco()
-  console.log(id.id)
-  banco.splice(id.id, 1)
-  console.log(banco)
-}
-
-const limparCampos = () => {
-  $nomeTutor.value = ''
-  $nomePet.value = ''
-  $especialidade.value = ''
-  for (let radio of $tipoAnimal) radio.checked = false
-  document.getElementById('nome').dataset.index = 'novo'
-}
+const $container = document.getElementsByClassName('container-principal')[0]
+const $semItems = document.getElementsByClassName('sem-items')[0]
+const $menu = document.getElementsByClassName('menu-opcao')
+const $operacao = document.getElementsByClassName('categoria-menu')[0]
+const $adicionarNovo = document.getElementsByClassName('adicionar-novo')
 
 class Animal {
   constructor(id, nome, raca, especialidade, dono) {
@@ -51,99 +24,48 @@ class Animal {
   }
 }
 
-
-
-$formularioCadastro.addEventListener('submit', e => {
-  e.preventDefault()
-
-  let tipoAnimal
-
-  const tamanho = lerBanco()
-  const index = tamanho.length + 1
-
-  for (let radio of $tipoAnimal) {
-    if (radio.checked) tipoAnimal = radio.value
-  }
-
-  let novoPet = new Animal(
-    index,
-    $nomePet.value,
-    tipoAnimal,
-    $especialidade.value,
-    $nomeTutor.value
-  )
-  if (index === 'novo') {
-    salvarPet(novoPet)
-    limparCampos()
-    $modal.style.display = "none"
-  } else {
-
-  }
-  Toastify({
-    text: "Pet cadastrado com sucesso!",
-    duration: 4000,
-    style: {
-      background: "linear-gradient(25deg, rgba(106,102,242,1) 1%, rgba(124,120,247,1) 50%, rgba(156,153,255,1) 100%)",
-    }
-  }).showToast();
-  salvarPet(novoPet)
-  fecharModal()
-  limparCampos()
-})
-
-const criarCards = () => {
-  let listaDosPets = lerBanco()
-  
-  listaDosPets.forEach((pet) => {
-    let $card = document.createElement('div')
-    let $cardImagem = document.createElement('img')
-    let $cardTitulo = document.createElement('h4')
-    let $cardSubtitulo = document.createElement('p')
-    let $cardEspecialidade = document.createElement('p')
-    let $cardAcoes = document.createElement('div')
-    let $botaoEditar = document.createElement('button')
-    let $botaoDeletar = document.createElement('button')
-
-    $card.classList.add('cardPet')
-    $cardImagem.classList.add('imagem-cardPet')
-    $cardTitulo.classList.add('titulo-cardPet')
-    $cardSubtitulo.classList.add('subtitulo-cardPet')
-    $cardEspecialidade.classList.add('especialidade-cardPet')
-    $cardAcoes.classList.add('botoes-cardPet')
-    $botaoEditar.classList.add('botao-editar-card')
-    $botaoDeletar.classList.add('botao-deletar-card')
-
-    switch (pet.raca) {
-      case 'Cachorro': $cardImagem.src = 'https://placedog.net/100/50?r'
-        break
-      case 'Gato': $cardImagem.src = 'http://placekitten.com/100/50'
-        break
-      case 'Silvestre': $cardImagem.src = 'https://placebear.com/100/50'
-        break
-    }
-    
-    $cardTitulo.innerText = pet.nome
-    $cardSubtitulo.innerText = pet.raca
-    $cardEspecialidade.innerText = pet.especialidade
-    $botaoEditar.value = 'editar'
-    $botaoEditar.innerText = 'Editar'
-    $botaoDeletar.value = 'deletar'
-    $botaoDeletar.innerText = 'Deletar'
-
-    $botaoEditar.addEventListener('click', () => { editarPet(pet) })
-    $botaoDeletar.addEventListener('click', () => { deletarPet(pet) })
-
-    $card.appendChild($cardImagem)
-    $card.appendChild($cardTitulo)
-    $card.appendChild($cardSubtitulo)
-    $card.appendChild($cardEspecialidade)
-    $cardAcoes.appendChild($botaoEditar)
-    $cardAcoes.appendChild($botaoDeletar)
-    $card.appendChild($cardAcoes)
-    $container.appendChild($card)
-  });
+const criaNovoPet = (pet) => {
+  const banco = pegarLocalStorage()
+  banco.push(pet)
+  definirLocalStorage(banco)
 }
 
+const deletarPet = (pet) => {
+  const banco = lerBanco()
+  let indice = banco.findIndex((item) => item.id == pet.id)
+  banco.splice(indice, 1)
+  definirLocalStorage(banco)
+  atualizarCards()
+}
+
+const editarPet = (pet) => {
+  const banco = lerBanco()
+  banco[pet.id] = pet
+  definirLocalStorage(banco)
+}
+
+const atualizarCards = () => {
+  const banco = lerBanco()
+  const cards = document.querySelectorAll('.cardPet')
+  for (let card of cards) card.parentNode.removeChild(card)
+  banco.forEach(criarCards)
+}
+
+const alertaSemItens = (modo) => {
+  if (modo === 'mostrar') {
+    $container.style.flexWrap = 'nowrap'
+    $semItems.classList.remove('none')
+  } else if (modo === 'esconder') {
+    $container.style.flexWrap = 'wrap'
+    $semItems.classList.add('none')
+  } else { console.log('erro') }
+}
+
+for (let item of $adicionarNovo) item.addEventListener('click', ()=> 
+{
+  $enviarForm.value = 'Cadastrar'
+  mostrarModal()
+})
 for (let item of $menu) {
   item.addEventListener('click', () => {
     switch (item.id) {
@@ -158,7 +80,23 @@ for (let item of $menu) {
 }
 
 
+atualizarCards()
 
+if (pegarLocalStorage() == true) {
+  alertaSemItens('mostrar')
+} else {
+  alertaSemItens('esconder')
+}
 
-criarCards()
-console.log(lerBanco())
+export {
+  lerBanco,
+  pegarLocalStorage,
+  definirLocalStorage,
+  criaNovoPet,
+  deletarPet,
+  atualizarCards,
+  Animal,
+  alertaSemItens,
+  $container,
+  editarPet
+}
