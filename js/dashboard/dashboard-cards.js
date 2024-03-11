@@ -1,4 +1,5 @@
 import { exibirEdicao } from "./dashboard-cadastro.js"
+import { mostrarModal } from "./dashboard-modal.js"
 import { $container, editarPet, deletarPet, atualizarCards } from "./dashboard.js"
 
 const numeroAleatorio = Math.floor(Math.random() * 5 + 1)
@@ -40,7 +41,6 @@ export const criarCards = (pet) => {
   $botaoDeletar.innerText = 'Deletar'
 
   $botaoEditar.addEventListener('click', () => {
-    console.log(pet.id)
     exibirEdicao(pet.id)
   })
   $botaoDeletar.addEventListener('click', () => {

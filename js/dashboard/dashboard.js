@@ -31,17 +31,23 @@ const criaNovoPet = (pet) => {
 }
 
 const deletarPet = (pet) => {
-  const banco = lerBanco()
-  let indice = banco.findIndex((item) => item.id == pet.id)
-  banco.splice(indice, 1)
-  definirLocalStorage(banco)
+  let certeza = confirm('Deseja realmente deletar esse pet?')
+  if (certeza) {
+    const banco = lerBanco()
+    let indice = banco.findIndex((item) => item.id == pet.id)
+    banco.splice(indice, 1)
+    definirLocalStorage(banco)
+  }
   atualizarCards()
 }
 
 const editarPet = (pet) => {
   const banco = lerBanco()
-  banco[pet.id] = pet
+  let indice = banco.findIndex(item => item.id === pet.id);
+  console.log(indice)
+  banco[indice] = pet
   definirLocalStorage(banco)
+  atualizarCards()
 }
 
 const atualizarCards = () => {
@@ -61,8 +67,7 @@ const alertaSemItens = (modo) => {
   } else { console.log('erro') }
 }
 
-for (let item of $adicionarNovo) item.addEventListener('click', ()=> 
-{
+for (let item of $adicionarNovo) item.addEventListener('click', () => {
   $enviarForm.value = 'Cadastrar'
   mostrarModal()
 })

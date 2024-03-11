@@ -8,7 +8,7 @@ const pegarLocalStorage = () => JSON.parse(localStorage.getItem('banco_clinicat_
 const lerBanco = () => pegarLocalStorage()
 
 export class Usuario {
-  constructor(email, senha){
+  constructor(email, senha) {
     this.email = email
     this.senha = senha
   }
@@ -16,13 +16,15 @@ export class Usuario {
 
 const entrar = () => {
   const banco = lerBanco()
-  let pet = new Usuario(
+  let form = new Usuario(
     $usuario.value,
     $senha.value
   )
-  let indice = banco.find((item) => item == pet)
-  if(indice){
+  const login = banco.find((usuario) => usuario.email === form.email && usuario.senha == form.senha); // true
+  if (login) {
     window.location.href = './html/dashboard.html'
+  } else {
+    alert('usuario ou senha incorretos')
   }
 }
 

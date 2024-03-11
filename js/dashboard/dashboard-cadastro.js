@@ -35,16 +35,25 @@ const cadastrarPet = () => {
 }
 
 export const exibirEdicao = (id) => {
+  let animalSelecionado
   const banco = lerBanco()
   const dadosAntigos = banco.find(item => item.id == id);
   $nomePet.value = dadosAntigos.nome
   $nomeTutor.value = dadosAntigos.dono
+  $especialidade.value = dadosAntigos.especialidade
   for (let radio of $tipoAnimal) {
     if (dadosAntigos.raca == radio.value) {
       radio.checked = true
     }
   }
-  $especialidade.value = dadosAntigos.especialidade
+  for (let radio of $tipoAnimal) if (radio.checked) animalSelecionado = radio.value
+  $enviarForm.value = 'Atualizar pet'
+  mostrarModal()
+}
+
+const enviaEdicao = () => {
+  const banco = lerBanco()
+  const dadosAntigos = banco.find(item => item.id == id);
   let animalSelecionado
   for (let radio of $tipoAnimal) if (radio.checked) animalSelecionado = radio.value
   const dadosNovos = new Animal(
@@ -54,8 +63,15 @@ export const exibirEdicao = (id) => {
     $especialidade.value,
     $nomeTutor.value
   )
-  $enviarForm.value = 'Atualizar pet'
-  mostrarModal();
+  editarPet(dadosNovos)
+  fecharModal()
+  Toastify({
+    text: "Pet editado com sucesso!",
+    duration: 4000,
+    style: {
+      background: "linear-gradient(25deg, rgba(106,102,242,1) 1%, rgba(124,120,247,1) 50%, rgba(156,153,255,1) 100%)",
+    }
+  }).showToast();
 }
 
 export const limparCampos = () => {
@@ -67,6 +83,10 @@ export const limparCampos = () => {
 
 $formularioCadastro.addEventListener('submit', e => {
   e.preventDefault()
-  cadastrarPet()
+  if($enviarForm.value == 'Cadastrar'){
+    cadastrarPet()
+  }else if($enviarForm.value == 'Atualizar pet'){
+    enviaEdicao()
+  }
   alertaSemItens('esconder')
 })
