@@ -4,11 +4,11 @@
   flex-direction: column; 
   gap: 0.5rem;
   box-shadow: 0px 0px 5px gray;
-  width: 20rem;
+  width: 15rem;
   padding: 1rem;
   border-radius: 15px;
+  margin: 0px;
 }
-
 
 .imagem-cardPet {
   width: 100%;

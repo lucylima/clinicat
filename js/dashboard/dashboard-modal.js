@@ -1,15 +1,15 @@
-import { limparCampos } from './dashboard-cadastro.js'
+import { clearFields } from './dashboard-cadastro.js'
 
 const $modal = document.getElementsByClassName('modal-cadastro')[0]
-const $fecharModal = document.getElementsByClassName('modal-fechar')[0]
+const $closeModal = document.getElementsByClassName('modal-fechar')[0]
 
-const mostrarModal = () => { $modal.style.display = 'block' }
-const fecharModal = () => {
-  limparCampos()
+const showModal = () => { $modal.style.display = 'block' }
+const closeModal = () => {
+  clearFields()
   $modal.style.display = 'none'
 }
 
-$fecharModal.onclick = () => fecharModal()
-window.onclick = (event) => { if (event.target == $modal) fecharModal() }
+$fecharModal.onclick = () => closeModal()
+window.onclick = (event) => { if (event.target == $modal) closeModal() }
 
-export { mostrarModal, fecharModal }
+export { showModal, closeModal }

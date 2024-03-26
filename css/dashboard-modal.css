@@ -18,13 +18,13 @@
   width: 100%;
 }
 
-.modal-titulo {
+.modal-title {
   display: flex;
   align-self: flex-start;
   font-size: 2rem;
 }
 
-.modal-fechar {
+.modal-close {
   cursor: pointer;
 }
 
@@ -40,7 +40,7 @@
   gap: 1rem;
 }
 
-.formulario-cadastro {
+.form {
   width: 100%;
   display: flex;
   align-items: center;

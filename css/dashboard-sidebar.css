@@ -1,13 +1,6 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Kalnia:wght@100..700&display=swap");
-:root {
-  --cor-primaria: #f29bdb;
-  --cor-secundaria: #f2d0e9;
-  --cor-terciaria: #6a66f2;
-  --preto: #090020;
-  --cor-fundo: #ffd8f3;
-}
+@import "utilities.css";
 
-.tipografia {
+.typography{
   font-family: Kalnia;
   color: var(--cor-terciaria);
   font-size: 2rem;
@@ -33,7 +26,7 @@
   padding: 0.8rem;
 }
 
-.menu-opcao {
+.menu-option {
   cursor: pointer;
   list-style: none;
   display: flex;
@@ -48,7 +41,7 @@
   transition: 0.2s;
 }
 
-.menu-opcao:hover {
+.menu-option:hover {
   backdrop-filter: brightness(90%);
 }
 

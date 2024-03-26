@@ -1,11 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Kalnia:wght@100..700&display=swap');
-:root {
-  --cor-primaria: #f29bdb;
-  --cor-secundaria: #f2d0e9;
-  --cor-terciaria: #6a66f2;
-  --preto: #090020;
-  --cor-fundo:  #FFD8F3;
-}
+@import "utilities.css";
+
 * {
   margin: 0px;
   padding: 0px;

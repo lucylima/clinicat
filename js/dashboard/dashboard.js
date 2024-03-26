@@ -1,103 +1,71 @@
-import { mostrarModal } from './dashboard-modal.js'
-import { criarCards } from './dashboard-cards.js'
-import { $enviarForm } from './dashboard-cadastro.js'
+import { showModal } from './dashboard-modal.js'
+import { createCards } from './dashboard-cards.js'
+import { $submitForm } from './dashboard-cadastro.js'
 
-const operacao = ''
-
-const definirLocalStorage = (banco) => localStorage.setItem("banco_clinicat_pets", JSON.stringify(banco))
-const pegarLocalStorage = () => JSON.parse(localStorage.getItem('banco_clinicat_pets')) ?? []
-const lerBanco = () => pegarLocalStorage()
+const setLocalStorage = (database) => localStorage.setItem("banco_clinicat_pets", JSON.stringify(database))
+const getLocalStorage = () => JSON.parse(localStorage.getItem('banco_clinicat_pets')) ?? []
+const readLocalStorage = () => getLocalStorage()
 
 const $container = document.getElementsByClassName('container-principal')[0]
-const $semItems = document.getElementsByClassName('sem-items')[0]
+const $noItems = document.getElementsByClassName('sem-items')[0]
 const $menu = document.getElementsByClassName('menu-opcao')
-const $operacao = document.getElementsByClassName('categoria-menu')[0]
-const $adicionarNovo = document.getElementsByClassName('adicionar-novo')
+const $menuTitle = document.getElementsByClassName('categoria-menu')[0]
+const $newPetButtons = document.getElementsByClassName('adicionar-novo')
 
-class Animal {
-  constructor(id, nome, raca, especialidade, dono) {
-    this.id = id
-    this.nome = nome
-    this.raca = raca
-    this.especialidade = especialidade
-    this.dono = dono
-  }
+const createNewPet = (pet) => {
+  const database = getLocalStorage()
+  database.push(pet)
+  setLocalStorage(database)
 }
 
-const criaNovoPet = (pet) => {
-  const banco = pegarLocalStorage()
-  banco.push(pet)
-  definirLocalStorage(banco)
-}
-
-const deletarPet = (pet) => {
+const deletePet = (pet) => {
   let certeza = confirm('Deseja realmente deletar esse pet?')
   if (certeza) {
-    const banco = lerBanco()
-    let indice = banco.findIndex((item) => item.id == pet.id)
-    banco.splice(indice, 1)
-    definirLocalStorage(banco)
+    const database = readLocalStorage()
+    let index = database.findIndex((item) => item.id == pet.id)
+    database.splice(index, 1)
+    setLocalStorage(database)
   }
-  atualizarCards()
+  updateCards()
 }
 
-const editarPet = (pet) => {
-  const banco = lerBanco()
-  let indice = banco.findIndex(item => item.id === pet.id);
-  console.log(indice)
-  banco[indice] = pet
-  definirLocalStorage(banco)
-  atualizarCards()
+const editPet = (pet) => {
+  const database = readLocalStorage()
+  let index = database.findIndex(item => item.id === pet.id);
+  console.log(index)
+  database[index] = pet
+  setLocalStorage(database)
+  updateCards()
 }
 
-const atualizarCards = () => {
-  const banco = lerBanco()
+const updateCards = () => {
+  const database = readLocalStorage()
   const cards = document.querySelectorAll('.cardPet')
   for (let card of cards) card.parentNode.removeChild(card)
-  banco.forEach(criarCards)
+  database.forEach(createCards)
 }
 
 const alertaSemItens = (modo) => {
   if (modo === 'mostrar') {
-    $container.style.flexWrap = 'nowrap'
     $semItems.classList.remove('none')
   } else if (modo === 'esconder') {
-    $container.style.flexWrap = 'wrap'
     $semItems.classList.add('none')
-  } else { console.log('erro') }
+  }
 }
 
 for (let item of $adicionarNovo) item.addEventListener('click', () => {
-  $enviarForm.value = 'Cadastrar'
-  mostrarModal()
+  $submitForm.value = 'Cadastrar'
+  showModal()
 })
+
 for (let item of $menu) {
   item.addEventListener('click', () => {
     switch (item.id) {
       case 'inicio':
-        $operacao.innerHTML = 'Início'
+        $menuTitle.innerHTML = 'Início'
         break;
     }
   })
 }
 
-atualizarCards()
-
-if (pegarLocalStorage() == true) {
-  alertaSemItens('mostrar')
-} else {
-  alertaSemItens('esconder')
-}
-
-export {
-  lerBanco,
-  pegarLocalStorage,
-  definirLocalStorage,
-  criaNovoPet,
-  deletarPet,
-  atualizarCards,
-  Animal,
-  alertaSemItens,
-  $container,
-  editarPet
-}
+updateCards()
