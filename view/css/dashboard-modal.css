@@ -1,6 +1,6 @@
 @import "utilities.css";
 
-.modal-register {
+.modal {
   display: none;
   position: fixed;
   z-index: 1;
@@ -26,11 +26,11 @@
   font-size: 2rem;
 }
 
-.modal-close {
+.modal-xe {
   cursor: pointer;
 }
 
-.register-content {
+.pet-register-content {
   background-color: white;
   margin: 20vh auto;
   padding: 1.5rem;
@@ -92,7 +92,7 @@
   font-size: 0.9rem;
 }
 
-.input-formulario {
+.input-form {
   padding: 0.8rem;
   font-size: 0.9rem;
   font-weight: 600;

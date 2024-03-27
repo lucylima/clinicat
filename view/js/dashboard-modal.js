@@ -1,33 +1,32 @@
 import { readLocalStorage } from "../../model/Database.js";
-import { clearFields } from "./dashboard-cadastro.js";
+import { elements } from "./elements.js";
+import { createPet } from "../../controller/petController.js";
+import { createNewPet } from "../../controller/CRUD.js";
 
-const $modal = document.getElementsByClassName("modal")[0];
-const $closeModal = document.getElementsByClassName("modal-x")[0];
+const clearFields = () => {
+  elements.modalForm.$petNameField.value = "";
+  elements.modalForm.$petOwnerField.value = "";
+  elements.modalForm.$specialitySelect.value = "";
+  for (let radio of elements.modalForm.$animalType) radio.checked = false;
+};
 
 const showModal = () => {
-  $modal.style.display = "block";
+  elements.modal.$modal.style.display = "block";
 };
 
 const closeModal = () => {
   clearFields();
-  $modal.style.display = "none";
-};
-
-export const clearFields = () => {
-  $nomeTutor.value = "";
-  $nomePet.value = "";
-  $especialidade.value = "";
-  for (let radio of $tipoAnimal) radio.checked = false;
+  elements.modal.$modal.style.display = "none";
 };
 
 const petEditModal = (id) => {
-  let sele;
-  const banco = lerBanco();
-  const dadosAntigos = banco.find((item) => item.id == id);
-  $nomePet.value = dadosAntigos.nome;
-  $nomeTutor.value = dadosAntigos.dono;
-  $especialidade.value = dadosAntigos.especialidade;
-  for (let radio of $tipoAnimal) {
+  let selectedRadio;
+  const database = readLocalStorage();
+  const petInfo = database.find((item) => item.id == id);
+  elements.modalForm.$petNameField.value = petInfo.petName;
+  elements.modalForm.$petOwnerField.value = petInfo.petOwner;
+  elements.modalForm.$specialitySelect.value = petInfo.speciality;
+  for (let radio of elements.modal.modalForm.$animalType) {
     if (dadosAntigos.raca == radio.value) {
       radio.checked = true;
     }
@@ -64,23 +63,24 @@ const petRegisterModal = () => {
         "linear-gradient(25deg, rgba(106,102,242,1) 1%, rgba(124,120,247,1) 50%, rgba(156,153,255,1) 100%)",
     },
   }).showToast();
+  $submitForm.value = "Cadastrar";
 };
 
 const enviaEdicao = () => {
-  const banco = lerBanco();
-  const dadosAntigos = banco.find((item) => item.id == id);
-  let animalSelecionado;
-  for (let radio of $tipoAnimal)
-    if (radio.checked) animalSelecionado = radio.value;
-  const dadosNovos = new Animal(
-    dadosAntigos.id,
-    $nomePet.value,
-    animalSelecionado,
-    $especialidade.value,
-    $nomeTutor.value
+  const database = lerdatabase();
+  const petInfo = database.find((item) => item.id == id);
+  let selectedRadio;
+  for (let radio of elements.modalForm.$animalType)
+    if (radio.checked) selectedRadio = radio.value;
+  const overwritePet = createPet(
+    petInfo.id,
+    elements.modalForm.$petNameField.value,
+    selectedRadio,
+    elements.modalForm.$specialitySelect.value,
+    elements.modalForm.$petOwnerField.value
   );
-  editarPet(dadosNovos);
-  fecharModal();
+  editPet(overwritePet);
+  closeModal();
   Toastify({
     text: "Pet editado com sucesso!",
     duration: 4000,
@@ -91,9 +91,9 @@ const enviaEdicao = () => {
   }).showToast();
 };
 
-$closeModal.onclick = () => closeModal();
+elements.modal.$closeModal.onclick = () => closeModal();
 window.onclick = (event) => {
   if (event.target == $modal) closeModal();
 };
 
-export { showModal, closeModal };
+export { showModal, closeModal, petRegisterModal, petEditModal };

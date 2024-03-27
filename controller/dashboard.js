@@ -1,35 +1,23 @@
-const $container = document.getElementsByClassName("container-principal")[0];
-const $noItems = document.getElementsByClassName("sem-items")[0];
-const $menu = document.getElementsByClassName("menu-opcao");
-const $menuTitle = document.getElementsByClassName("categoria-menu")[0];
-const $newPetButtons = document.getElementsByClassName("adicionar-novo");
+import { petRegisterModal } from "../view/js/dashboard-modal.js";
+import {
+  getLocalStorage,
+  readLocalStorage,
+  setLocalStorage,
+} from "../model/Database.js";
+import { createCards } from "../view/js/dashboard-cards.js";
+import { updateCards } from "./CRUD.js";
+import { elements } from "../view/js/elements.js";
 
-const updateCards = () => {
-  const database = readLocalStorage();
-  const cards = document.querySelectorAll(".cardPet");
-  for (let card of cards) card.parentNode.removeChild(card);
-  database.forEach(createCards);
-};
-
-const alertaSemItens = (modo) => {
-  if (modo === "mostrar") {
-    $semItems.classList.remove("none");
-  } else if (modo === "esconder") {
-    $semItems.classList.add("none");
-  }
-};
-
-for (let item of $adicionarNovo)
+for (let item of elements.dashboard.$newPetButtons)
   item.addEventListener("click", () => {
-    $submitForm.value = "Cadastrar";
-    showModal();
+    petRegisterModal();
   });
 
-for (let item of $menu) {
+for (let item of elements.dashboard.$menu) {
   item.addEventListener("click", () => {
     switch (item.id) {
       case "inicio":
-        $menuTitle.innerHTML = "Início";
+        elements.dashboard.$menuTitle.innerHTML = "Início";
         break;
     }
   });

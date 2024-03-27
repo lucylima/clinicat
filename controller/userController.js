@@ -1,9 +1,8 @@
-import User from '../model/User.js'
+import { User } from "../model/User.js";
 
 const createUser = (name, email, password) => {
-  let pet = new User(name, email, password)
-  return pet
-}
+  let pet = new User(name, email, password);
+  return pet;
+};
 
-export { createUser }
-
+export { createUser };

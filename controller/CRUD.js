@@ -1,3 +1,10 @@
+import {
+  getLocalStorage,
+  readLocalStorage,
+  setLocalStorage,
+} from "../model/Database.js";
+import { createCards } from "../view/js/dashboard-cards.js";
+
 const createNewPet = (pet) => {
   const database = getLocalStorage();
   database.push(pet);
@@ -24,3 +31,11 @@ const editPet = (pet) => {
   updateCards();
 };
 
+const updateCards = () => {
+  const database = readLocalStorage();
+  const cards = document.querySelectorAll(".cardPet");
+  for (let card of cards) card.parentNode.removeChild(card);
+  database.forEach(createCards);
+};
+
+export { createNewPet, deletePet, editPet, updateCards };

@@ -1,4 +1,5 @@
-import { showModal } from "./dashboard-modal";
+import { petEditModal } from '../js/dashboard-modal.js'
+import { elements } from '../js/elements.js'
 
 const randomInt = Math.floor(Math.random() * 5 + 1);
 
@@ -36,8 +37,8 @@ const createCards = (pet) => {
   $cardTitle.innerText = pet.name;
   $cardSubtitle.innerText = pet.breed;
   $cardSpeciality.innerText = pet.speciality;
-  $botaoEditar.value = "editar";
-  $cardEotaoEditar.innerText = "Editar";
+  $cardEditButton.value = "editar";
+  $cardEditButton.innerText = "Editar";
   $cardDeleteButton.value = "deletar";
   $cardDeleteButton.innerText = "Deletar";
 
@@ -53,7 +54,9 @@ const createCards = (pet) => {
   $card.appendChild($cardSubtitle);
   $card.appendChild($cardSpeciality);
   $cardActions.appendChild($cardEditButton);
-  $editButton.appendChild($cardDeleteButton);
-  $card.editButton($cardActions);
-  $container.appendChild($cardEditButton);
+  $cardEditButton.appendChild($cardDeleteButton);
+  $card.appendChild($cardActions);
+  elements.dashboard.$container.appendChild($cardEditButton);
 };
+
+export { createCards }
