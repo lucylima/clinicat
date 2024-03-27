@@ -1,4 +1,4 @@
-.modal-cadastro {
+.modal-register {
   display: none;
   position: fixed;
   z-index: 1;
@@ -28,7 +28,7 @@
   cursor: pointer;
 }
 
-.cadastro-conteudo {
+.register-content {
   background-color: white;
   margin: 20vh auto;
   padding: 1.5rem;
@@ -47,7 +47,7 @@
   justify-content: center;
 }
 
-.ilustracao-registro {
+.illustration-register {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -58,11 +58,11 @@
   background-color: var(--cor-fundo);
 }
 
-.imagem-registro {
+.image-register {
   width: 100%;
 }
 
-.formulario {
+.form {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -71,20 +71,20 @@
   gap: 1rem;
 }
 
-.campo-formulario {
+.field-form {
   display: flex;
   flex-direction: column;
   width: 100%;
 }
 
-.campo-grupo {
+.field-group {
   display: flex;
   width: 100%;
   gap: 1.5rem;
   justify-content: center;
 }
 
-.label-formulario {
+.label-form {
   margin-bottom: 0.5rem;
   font-weight: 700;
   font-size: 0.9rem;
@@ -101,7 +101,7 @@
   width: 100%;
 }
 
-.botao-enviar-cadastro {
+.button-submit-pet {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -117,11 +117,11 @@
   cursor: pointer;
 }
 
-.botao-enviar-cadastro:hover {
+.button-submit-pet:hover {
   filter: brightness(95%);
 }
 
-.campo-tipo-animal {
+.field-animal-type {
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -140,13 +140,13 @@
   gap: 0.2rem;
 }
 
-.label-radio-selecionado {
+.label-radio-selected {
   color: white;
   background-color: var(--cor-terciaria);
   transition: 0.3s;
 }
 
-.label-radio-selecionado .icone-animal {
+.label-radio-selected .animal-icon {
   filter: invert(98%) sepia(8%) saturate(122%) hue-rotate(223deg)
     brightness(118%) contrast(100%);
 }
@@ -156,13 +156,13 @@
   margin-top: 0.5rem;
 }
 
-.icone-animal {
+.animal-icon {
   width: 4rem;
   filter: invert(35%) sepia(59%) saturate(1729%) hue-rotate(222deg)
     brightness(100%) contrast(90%);
 }
 
-.especialidades {
+.doctor-speciality {
   width: 23rem;
   appearance: none;
   background-color: transparent;

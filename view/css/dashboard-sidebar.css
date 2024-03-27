@@ -45,7 +45,7 @@
   backdrop-filter: brightness(90%);
 }
 
-.perfil-usuario {
+.user-profile {
   display: flex;
   align-items: center;
   padding: 1rem 0.8rem;
@@ -55,20 +55,20 @@
   width: 100%;
 }
 
-.conta-usuario {
+.user-account {
   display: flex;
   flex-direction: column;
   gap: 0.2rem;
 }
 
-.foto-usuario {
+.user-photo {
   border-radius: 100%;
 }
 
-.nome-usuario {
+.user-name{
   font-size: 0.9rem;
 }
 
-.email-usuario {
+.user-email {
   font-size: 0.8rem;
 }

@@ -1,9 +1,11 @@
-export default class Pet {
+class Pet {
   constructor(id, petName, breed, speciality, petOwner) {
     this.id = id
-    this.petName =petName
+    this.petName = petName
     this.breed = breed
     this.speciality = speciality
     this.petOwner = petOwner
   }
 }
+
+export { Pet }

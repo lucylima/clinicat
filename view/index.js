@@ -7,13 +7,6 @@ const definirLocalStorage = (banco) => localStorage.setItem("banco_clinicat_usua
 const pegarLocalStorage = () => JSON.parse(localStorage.getItem('banco_clinicat_usuarios')) ?? []
 const lerBanco = () => pegarLocalStorage()
 
-export class Usuario {
-  constructor(email, senha) {
-    this.email = email
-    this.senha = senha
-  }
-}
-
 const entrar = () => {
   const banco = lerBanco()
   let form = new Usuario(
