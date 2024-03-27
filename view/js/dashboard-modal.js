@@ -27,47 +27,47 @@ const petEditModal = (id) => {
   elements.modalForm.$petOwnerField.value = petInfo.petOwner;
   elements.modalForm.$specialitySelect.value = petInfo.speciality;
   for (let radio of elements.modal.modalForm.$animalType) {
-    if (dadosAntigos.raca == radio.value) {
+    if (petInfo.breed == radio.value) {
       radio.checked = true;
     }
   }
-  for (let radio of $tipoAnimal)
+  for (let radio of elements.modalForm.$animalType)
     if (radio.checked) animalSelecionado = radio.value;
-  $enviarForm.value = "Atualizar pet";
-  mostrarModal();
+  elements.modalForm.$submitFormButton.value = "Atualizar pet";
+  showModal();
 };
 
 const petRegisterModal = () => {
+  showModal();
+
+  elements.modalForm.$submitForm.value = "Cadastrar";
+};
+
+const submitRegister = () => {
   const database = readLocalStorage();
   let selectedRadio;
 
-  for (let radio of $animalType)
+  for (let radio of elements.modalForm.$animalType)
     if (radio.checked) {
       selectedRadio = radio.value;
     }
-
   let pet = createPet(
     database.length + 1,
-    $petName.value,
+    elements.modalForm.$petNameField.value,
     selectedRadio,
-    $speciality.value,
-    $petOwner.value
+    elements.modalForm.$specialitySelect.value,
+    elements.modalForm.$petOwnerField.value
   );
-
-  createNewPet(pet);
-  Toastify({
-    text: "Pet cadastrado com sucesso!",
-    duration: 4000,
-    style: {
-      background:
-        "linear-gradient(25deg, rgba(106,102,242,1) 1%, rgba(124,120,247,1) 50%, rgba(156,153,255,1) 100%)",
-    },
-  }).showToast();
-  $submitForm.value = "Cadastrar";
+    createNewPet(pet)
 };
-
-const enviaEdicao = () => {
-  const database = lerdatabase();
+const submitEdit = () => {  let pet = createPet(
+    database.length + 1,
+    elements.modalForm.$petNameField.value,
+    selectedRadio,
+    elements.modalForm.$specialitySelect.value,
+    elements.modalForm.$petOwnerField.value
+  );
+  const database = readLocalStorage();
   const petInfo = database.find((item) => item.id == id);
   let selectedRadio;
   for (let radio of elements.modalForm.$animalType)
@@ -91,9 +91,13 @@ const enviaEdicao = () => {
   }).showToast();
 };
 
+elements.modalForm.$formPet.addEventListener("submit", (e) => {
+  e.preventDefault();
+});
+
 elements.modal.$closeModal.onclick = () => closeModal();
 window.onclick = (event) => {
-  if (event.target == $modal) closeModal();
+  if (event.target == elements.modal.$modal) closeModal();
 };
 
 export { showModal, closeModal, petRegisterModal, petEditModal };

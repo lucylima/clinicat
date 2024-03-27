@@ -1,5 +1,5 @@
-import { petEditModal } from '../js/dashboard-modal.js'
-import { elements } from '../js/elements.js'
+import { petEditModal } from "../js/dashboard-modal.js";
+import { elements } from "../js/elements.js";
 
 const randomInt = Math.floor(Math.random() * 5 + 1);
 
@@ -54,9 +54,9 @@ const createCards = (pet) => {
   $card.appendChild($cardSubtitle);
   $card.appendChild($cardSpeciality);
   $cardActions.appendChild($cardEditButton);
-  $cardEditButton.appendChild($cardDeleteButton);
+  $cardActions.appendChild($cardDeleteButton);
   $card.appendChild($cardActions);
-  elements.dashboard.$container.appendChild($cardEditButton);
+  elements.dashboard.$container.appendChild($card);
 };
 
-export { createCards }
+export { createCards };
