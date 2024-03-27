@@ -4,22 +4,24 @@
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
 }
-.tipografia {
+
+.typography {
   font-family: Kalnia;
 }
+
 .container {
   display: flex;
   align-items: center;
   justify-content: center;
   height: 100vh;
-  background-color: var(--cor-secundaria);
+  background-color: var(--secondary-color);
 }
 
 .card-login {
   border-radius: 15px;
-  box-shadow: 0px 0px 6px var(--preto);
+  box-shadow: 0px 0px 6px var(--black);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -28,7 +30,7 @@
   background-color: white;
 }
 
-.form-login{
+.form-login {
   width: 50%;
   display: flex;
   align-items: center;
@@ -36,7 +38,7 @@
   padding: 8%;
 }
 
-.ilustracao-login {
+.login-illustration {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -44,7 +46,7 @@
   width: 50%;
   height: 100%;
   border-radius: 15px;
-  background-color: var(--cor-fundo);
+  background-color: var(--background-color);
   padding: 1rem;
 }
 
@@ -55,25 +57,24 @@
   flex-direction: column;
   align-items: center;
   width: 100%;
-
 }
 
-.titulo-call-to-action {
+.title-call-to-action {
   font-size: 2rem;
-  color: var(--cor-terciaria);
+  color: var(--tertiary-color);
 }
 
-.paragrafo-call-to-action {
+.paragraph-call-to-action {
   font-size: 1.1rem;
   width: 80%;
   font-weight: 600;
 }
 
-.imagem-login {
+.login-image {
   width: 75%;
 }
 
-.formulario {
+.form {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -82,19 +83,19 @@
   gap: 1rem;
 }
 
-.campo-formulario {
+.field-form {
   display: flex;
   flex-direction: column;
   width: 100%;
 }
 
-.label-formulario {
+.label-form {
   margin-bottom: 0.5rem;
   font-weight: 700;
   font-size: 0.9rem;
 }
 
-.input-formulario {
+.input-form {
   padding: 0.8rem;
   font-size: 0.9rem;
   font-weight: 600;
@@ -104,20 +105,7 @@
   border-radius: 8px;
 }
 
-.esqueceu-senha {
-  display: flex;
-  align-self: flex-end;
-  margin-top: 0.6rem;
-  font-size: 0.9rem;
-  color: var(--cor-terciaria);
-  text-decoration: none;
-}
-
-.esqueceu-senha:hover {
-  text-decoration: underline;
-}
-
-.botao-enviar {
+.button-submit {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -126,26 +114,26 @@
   margin-top: 1rem;
   border: none;
   border-radius: 8px;
-  background-color: var(--cor-terciaria);
+  background-color: var(--tertiary-color);
   color: white;
   font-weight: 700;
   font-size: 1rem;
   cursor: pointer;
 }
 
-.botao-enviar:hover {
-filter: brightness(95%);
+.button-submit:hover {
+  filter: brightness(95%);
 }
 
-.criar-conta{
+.create-an-account {
   margin-top: 1.2rem;
 }
 
-.link-criar-conta {
+.goto-signup {
   text-decoration: none;
-  color: var(--cor-terciaria);
+  color: var(--tertiary-color);
 }
 
-.link-criar-conta:hover {
+.goto-signup:hover {
   text-decoration: underline;
 }

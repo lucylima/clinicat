@@ -1,3 +1,5 @@
+@import "utilities.css";
+
 .pet-card {
   display: flex;
   justify-content: center;
@@ -28,7 +30,7 @@
 
 .speciality-card {
   align-self: center;
-  color: var(--cor-terciaria);
+  color: var(--tertiary-color);
 }
 
 .buttons-card {
@@ -46,9 +48,9 @@
   gap: 1rem;
   padding: 0.5rem 0.7rem;
   background: none;
-  outline: 2px solid var(--cor-terciaria);
+  outline: 2px solid var(--tertiary-color);
   border: none;
-  color: var(--cor-terciaria);
+  color: var(--tertiary-color);
   cursor: pointer;
   font-weight: 800;
   transition: 0.5s;
@@ -58,5 +60,5 @@
 .edit-button-card:hover,
 .delete-button-card:hover {
   color: white;
-  background-color: var(--cor-terciaria);
+  background-color: var(--tertiary-color);
 }

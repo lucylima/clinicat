@@ -2,7 +2,7 @@
 
 .typography{
   font-family: Kalnia;
-  color: var(--cor-terciaria);
+  color: var(--tertiary-color);
   font-size: 2rem;
   margin-top: 1rem;
   cursor: default;
@@ -15,7 +15,7 @@
   height: 100%;
   width: 16rem;
   align-items: center;
-  background-color: var(--cor-fundo);
+  background-color: var(--background-color);
 }
 
 .menu {
