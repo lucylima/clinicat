@@ -1,8 +1,8 @@
 import { createUser } from "../../controller/userController.js"
-import { readLocalStorage, setLocalStorage } from "../../model/Database.js"
+import { readLocalStorage, setLocalStorage } from "../../model/UserDatabase.js"
 import { elements } from "./elements.js"
 
-$form.addEventListener("submit", (e) => {
+elements.register.$form.addEventListener("submit", e => {
   e.preventDefault()
   const database = readLocalStorage()
   const newUser = createUser(
@@ -12,5 +12,5 @@ $form.addEventListener("submit", (e) => {
   )
   database.push(newUser)
   setLocalStorage(database)
-  window.location.href = "../../index.html"
+  window.location.href = '../../index.html'
 })

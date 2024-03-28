@@ -11,9 +11,9 @@
       type="image/png"
       sizes="96x96"
       rel="icon"
-      href="./assets/favicon.png"
+      href="../assets/favicon.png"
     />
-    <link rel="stylesheet" href="./css/index.css" />
+    <link rel="stylesheet" href="./view/css/index.css" />
     <title>Clinicat Entrar</title>
   </head>
   <body>
@@ -27,7 +27,7 @@
           />
           <div class="call-to-action">
             <h2 class="title-call-to-action">
-              Entrar na <span class="tipografia">Clinicat</span>
+              Entrar na <span class="typography">Clinicat</span>
             </h2>
             <p class="paragraph-call-to-action">
               Marque consultas para seus bichinhos, direto da internet
@@ -36,10 +36,16 @@
         </div>
         <div class="form-login">
           <form class="form">
-            <h3 class="typography titulo-call-to-action">Clinicat</h3>
+            <h3 class="typography title-call-to-action">Clinicat</h3>
             <div class="field-form">
               <label for="user" class="label-form">Email ou usuário</label>
-              <input type="text" name="user" id="user" class="input-form" />
+              <input
+                type="text"
+                name="user"
+                id="user"
+                class="input-form"
+                required
+              />
             </div>
             <div class="field-form">
               <label for="password" class="label-form">Senha</label>
@@ -48,6 +54,7 @@
                 name="password"
                 id="password"
                 class="input-form"
+                required
               />
             </div>
 
@@ -55,7 +62,8 @@
             <p class="create-an-account">
               Sem conta?
               <a href="./view/register/register.html" class="goto-signup"
-                >Crie uma conta agora</a>
+                >Crie uma conta agora</a
+              >
             </p>
           </form>
         </div>

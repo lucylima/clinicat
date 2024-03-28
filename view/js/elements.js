@@ -1,6 +1,6 @@
 export const elements = {
   dashboard: {
-    $container: document.getElementsByClassName("main-container")[0],
+    $container: document.getElementsByClassName("card-container")[0],
     $noItems: document.getElementsByClassName("no-items")[0],
     $menu: document.getElementsByClassName("menu-option"),
     $menuTitle: document.getElementsByClassName("menu-category")[0],
@@ -19,9 +19,14 @@ export const elements = {
     $submitFormButton: document.getElementsByClassName("button-submit-pet")[0],
   },
   register: {
-    $nameField: document.getElementById("name"),
-    $emailField: document.getElementById("email"),
-    $passwordField: document.getElementById("password"),
+    $nameField: document.getElementById("nameField"),
+    $emailField: document.getElementById("emailField"),
+    $passwordField: document.getElementById("passwordField"),
     $form: document.getElementsByClassName("form-register")[0],
   },
+  login: {
+    $formLogin: document.getElementsByClassName('form')[0],
+    $userField: document.getElementById('user'),
+    $passwordField: document.getElementById('password')
+  }
 };

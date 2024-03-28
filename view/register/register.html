@@ -3,17 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script
-      src="https://kit.fontawesome.com/fc55e81dc0.js"
-      crossorigin="anonymous"
-    ></script>
     <link
       type="image/png"
       sizes="96x96"
       rel="icon"
       href="../assets/favicon.png"
     />
-    <link rel="stylesheet" href="../assets/css/register.css" />
+    <link rel="stylesheet" href="../css/register.css" />
     <title>Registrar-se</title>
   </head>
   <body>
@@ -35,8 +31,9 @@
               <input
                 type="text"
                 name="nome"
-                id="nomeUser"
+                id="nameField"
                 class="input-form user"
+                required
               />
             </div>
 
@@ -45,8 +42,9 @@
               <input
                 type="email"
                 name="email"
-                id="email"
+                id="emailField"
                 class="input-form email"
+                required
               />
             </div>
 
@@ -55,12 +53,13 @@
               <input
                 type="password"
                 name="password"
-                id="password"
+                id="passwordField"
                 class="input-form"
+                required
               />
             </div>
             <input type="submit" value="Registrar" class="button-submit" />
-            <p class="">
+            <p class="have-an-account">
               Já tem cadastro?
               <a href="../../index.html" class="go-login">Entrar</a>
             </p>

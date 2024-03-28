@@ -1,24 +1,28 @@
+import { elements } from './js/elements.js'
+import { readLocalStorage } from '../model/UserDatabase.js'
+import { createUser } from '../controller/userController.js'
 
-let $formulario = document.getElementsByClassName('formulario')[0]
-let $usuario = document.getElementById('usuario')
-let $senha = document.getElementById('senha')
-
-const entrar = () => {
-  const banco = lerBanco()
-  let form = new Usuario(
-    $usuario.value,
-    $senha.value
+const login = () => {
+  const database = readLocalStorage()
+  let user = createUser(
+    undefined,
+    elements.login.$userField.value,
+    elements.login.$passwordField.value
   )
-  const login = banco.find((usuario) => usuario.email === form.email && usuario.senha == form.senha); // true
-  if (login) {
-    window.location.href = './html/dashboard.html'
+
+  const validateUser = database.find((databaseUser) => databaseUser.email === user.email && databaseUser.password == user.password); 
+  
+  if (validateUser) {
+    setTimeout(() => {
+      window.location.href = './view/dashboard/dashboard.html'
+    }, 200);
   } else {
     alert('usuario ou senha incorretos')
   }
 }
 
-$formulario.addEventListener('submit', e => {
+elements.login.$formLogin.addEventListener('submit', e => {
   e.preventDefault()
-  entrar()
+  login()
 })
 

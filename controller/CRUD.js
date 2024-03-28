@@ -18,6 +18,16 @@ const deletePet = (pet) => {
     let index = database.findIndex((item) => item.id == pet.id);
     database.splice(index, 1);
     setLocalStorage(database);
+    Toastify({
+      text: 'Pet deletado com sucesso!',
+      duration: 3000,
+      style: {
+        background:
+          'linear-gradient(25deg, rgba(242,111,111,1) 0%, rgba(253,45,45,1) 100%)',
+      },
+      gravity: "bottom", 
+      position: "right"
+    }).showToast()
   }
   updateCards();
 };

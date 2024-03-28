@@ -1,26 +1,28 @@
-import { readLocalStorage } from "../../model/Database.js"
-import { elements } from "./elements.js"
-import { createPet } from "../../controller/petController.js"
-import { createNewPet, updateCards } from "../../controller/CRUD.js"
+import { readLocalStorage } from '../../model/Database.js'
+import { elements } from './elements.js'
+import { createPet } from '../../controller/petController.js'
+import { createNewPet, updateCards, editPet } from '../../controller/CRUD.js'
+
+let id
 
 const clearFields = () => {
-  elements.modalForm.$petNameField.value = ""
-  elements.modalForm.$petOwnerField.value = ""
-  elements.modalForm.$specialitySelect.value = ""
+  elements.modalForm.$petNameField.value = ''
+  elements.modalForm.$petOwnerField.value = ''
+  elements.modalForm.$specialitySelect.value = ''
   for (let radio of elements.modalForm.$animalType) radio.checked = false
 }
 
 const showModal = () => {
-  elements.modal.$modal.style.display = "block"
+  elements.modal.$modal.style.display = 'block'
 }
 
 const closeModal = () => {
   clearFields()
-  elements.modal.$modal.style.display = "none"
+  elements.modal.$modal.style.display = 'none'
 }
 
 const petEditModal = (pet) => {
-  const database = readLocalStorage()
+  id = pet.id
   elements.modalForm.$petNameField.value = pet.petName
   elements.modalForm.$petOwnerField.value = pet.petOwner
   elements.modalForm.$specialitySelect.value = pet.speciality
@@ -29,19 +31,19 @@ const petEditModal = (pet) => {
       radio.checked = true
     }
   }
-  elements.modalForm.$submitFormButton.value = "Atualizar pet"
+  elements.modalForm.$submitFormButton.value = 'Atualizar pet'
+  console.log(pet)
   showModal()
 }
 
 const petRegisterModal = () => {
   showModal()
-  elements.modalForm.$submitFormButton.value = "Cadastrar"
+  elements.modalForm.$submitFormButton.value = 'Cadastrar'
 }
 
 const submitRegister = () => {
   const database = readLocalStorage()
   let selectedRadio
-
   for (let radio of elements.modalForm.$animalType)
     if (radio.checked) {
       selectedRadio = radio.value
@@ -57,31 +59,25 @@ const submitRegister = () => {
   updateCards()
   closeModal()
   Toastify({
-    text: "Pet cadastrado com sucesso!",
-    duration: 4000,
+    text: 'Pet registrado com sucesso!',
+    duration: 3000,
     style: {
       background:
-        "linear-gradient(25deg, rgba(106,102,242,1) 1%, rgba(124,120,247,1) 50%, rgba(156,153,255,1) 100%)",
+        'linear-gradient(25deg, rgba(106,102,242,1) 1%, rgba(124,120,247,1) 50%, rgba(156,153,255,1) 100%)',
     },
+    gravity: "bottom", 
+    position: "right"
   }).showToast()
 }
 
 const submitEdit = () => {
-  let pet = createPet(
-    database.length + 1,
-    elements.modalForm.$petNameField.value,
-    selectedRadio,
-    elements.modalForm.$specialitySelect.value,
-    elements.modalForm.$petOwnerField.value
-  )
-
-  const database = readLocalStorage()
-  const petInfo = database.find((item) => item.id == id)
   let selectedRadio
   for (let radio of elements.modalForm.$animalType)
-    if (radio.checked) selectedRadio = radio.value
+  if (radio.checked) {
+    selectedRadio = radio.value
+  }
   const overwritePet = createPet(
-    petInfo.id,
+    id,
     elements.modalForm.$petNameField.value,
     selectedRadio,
     elements.modalForm.$specialitySelect.value,
@@ -91,22 +87,24 @@ const submitEdit = () => {
   updateCards()
   closeModal()
   Toastify({
-    text: "Pet editado com sucesso!",
-    duration: 4000,
+    text: 'Pet editado com sucesso!',
+    duration: 3000,
     style: {
       background:
-        "linear-gradient(25deg, rgba(106,102,242,1) 1%, rgba(124,120,247,1) 50%, rgba(156,153,255,1) 100%)",
+        'linear-gradient(25deg, rgba(106,102,242,1) 1%, rgba(124,120,247,1) 50%, rgba(156,153,255,1) 100%)',
     },
+    gravity: "bottom", 
+    position: "right"
   }).showToast()
 }
 
-elements.modalForm.$formPet.addEventListener("submit", (e) => {
+elements.modalForm.$formPet.addEventListener('submit', (e) => {
   e.preventDefault()
   switch (elements.modalForm.$submitFormButton.value) {
-    case "Atualizar pet":
+    case 'Atualizar pet':
       submitEdit()
       break
-    case "Cadastrar":
+    case 'Cadastrar':
       submitRegister()
       break
   }
