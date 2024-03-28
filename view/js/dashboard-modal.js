@@ -33,7 +33,6 @@ const petEditModal = (pet) => {
     }
   }
   elements.modalForm.$submitFormButton.value = 'Atualizar pet'
-  console.log(pet)
   showModal()
 }
 

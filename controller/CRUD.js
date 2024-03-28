@@ -35,7 +35,6 @@ const deletePet = (pet) => {
 const editPet = (pet) => {
   const database = readLocalStorage();
   let index = database.findIndex((item) => item.id === pet.id);
-  console.log(index);
   database[index] = pet;
   setLocalStorage(database);
   updateCards();
