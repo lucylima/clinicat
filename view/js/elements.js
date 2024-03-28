@@ -13,7 +13,7 @@ export const elements = {
   modalForm: {
     $formPet: document.getElementsByClassName("form")[0],
     $animalType: document.getElementsByClassName("input-radio-animal"),
-    $specialitySelect: document.getElementsByClassName("doctor-speaciality")[0],
+    $specialitySelect: document.getElementById('doctor-speciality'),
     $petOwnerField: document.getElementsByClassName("petOwnerField")[0],
     $petNameField: document.getElementsByClassName("petNameField")[0],
     $submitFormButton: document.getElementsByClassName("button-submit-pet")[0],

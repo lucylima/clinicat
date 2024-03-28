@@ -10,7 +10,6 @@
   height: 100%;
   overflow: hidden;
   background-color: rgba(0, 0, 0, 0.2);
-  transition: 0.4s;
 }
 
 .modal-header {
@@ -26,13 +25,13 @@
   font-size: 2rem;
 }
 
-.modal-xe {
+.modal-x {
   cursor: pointer;
 }
 
 .pet-register-content {
   background-color: white;
-  margin: 20vh auto;
+  margin: 16vh auto;
   padding: 1.5rem;
   border-radius: 15px;
   width: 28rem;

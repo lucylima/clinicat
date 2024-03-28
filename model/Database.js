@@ -1,8 +1,8 @@
 const setLocalStorage = (database) =>
-  localStorage.setItem("banco_clinicat_pets", JSON.stringify(database));
+  localStorage.setItem("database_clinicat_pets", JSON.stringify(database));
 
 const getLocalStorage = () =>
-  JSON.parse(localStorage.getItem("banco_clinicat_pets")) ?? [];
+  JSON.parse(localStorage.getItem("database_clinicat_pets")) ?? [];
 
 const readLocalStorage = () => getLocalStorage();
 

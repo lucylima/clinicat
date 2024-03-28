@@ -41,7 +41,6 @@ body {
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  height: 100%;
   width: 100%;
 } 
 
@@ -69,7 +68,7 @@ body {
 
 .add-new {
   display: flex;
-  align-items: baseline;
+  align-items: center;
   justify-content: center;
   gap: 1rem;
   padding: 0.5rem 0.7rem;
@@ -80,6 +79,7 @@ body {
   cursor: pointer;
   font-weight: 800;
   transition: 0.5s;
+  font-size: 0.9rem;
 }
 
 .add-new:hover{

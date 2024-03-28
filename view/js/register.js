@@ -1,18 +1,16 @@
-import createPet from '../../../'
-import clearFields from '../../controller/dashboard.js'
+import { createUser } from "../../controller/userController.js"
+import { readLocalStorage, setLocalStorage } from "../../model/Database.js"
+import { elements } from "./elements.js"
 
-
-$form.addEventListener('submit', e => {
+$form.addEventListener("submit", (e) => {
   e.preventDefault()
-  const database = readDatabase()
-  const newUser = createPet(
-    $name.value,
-    $email.value,
-    $senha.value
+  const database = readLocalStorage()
+  const newUser = createUser(
+    elements.register.$nameField.value,
+    elements.register.$emailField.value,
+    elements.register.$passwordField.value
   )
-
-  database.push(novoUsuario)
+  database.push(newUser)
   setLocalStorage(database)
-  clearFields()
-  window.location.href = '../index.html'
+  window.location.href = "../../index.html"
 })

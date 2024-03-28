@@ -12,8 +12,8 @@ const createNewPet = (pet) => {
 };
 
 const deletePet = (pet) => {
-  let certeza = confirm("Deseja realmente deletar esse pet?");
-  if (certeza) {
+  let confirmAction = confirm("Deseja realmente deletar esse pet?");
+  if (confirmAction) {
     const database = readLocalStorage();
     let index = database.findIndex((item) => item.id == pet.id);
     database.splice(index, 1);
@@ -33,7 +33,7 @@ const editPet = (pet) => {
 
 const updateCards = () => {
   const database = readLocalStorage();
-  const cards = document.querySelectorAll(".cardPet");
+  const cards = document.querySelectorAll(".pet-card");
   for (let card of cards) card.parentNode.removeChild(card);
   database.forEach(createCards);
 };

@@ -1,12 +1,14 @@
 import { petRegisterModal } from "../view/js/dashboard-modal.js";
-import {
-  getLocalStorage,
-  readLocalStorage,
-  setLocalStorage,
-} from "../model/Database.js";
-import { createCards } from "../view/js/dashboard-cards.js";
 import { updateCards } from "./CRUD.js";
 import { elements } from "../view/js/elements.js";
+import { readLocalStorage } from "../model/Database.js";
+
+const noItems = () => {
+  let storage = localStorage.getItem("database_clinicat_pets");
+  storage
+    ? elements.dashboard.$noItems.classList.add("none")
+    : elements.dashboard.$noItems.classList.remove("none");
+};
 
 for (let item of elements.dashboard.$newPetButtons)
   item.addEventListener("click", () => {
@@ -22,5 +24,7 @@ for (let item of elements.dashboard.$menu) {
     }
   });
 }
-
+noItems();
 updateCards();
+
+export { noItems };

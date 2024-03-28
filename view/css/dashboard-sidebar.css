@@ -62,7 +62,11 @@
 }
 
 .user-photo {
+  background-image: url("../assets/dashboard/cat-profile.jpeg");
+  background-size: cover;
   border-radius: 100%;
+  width: 40px;
+  height: 40px;
 }
 
 .user-name{
