@@ -2,6 +2,7 @@ import { readLocalStorage } from '../../model/Database.js'
 import { elements } from './elements.js'
 import { createPet } from '../../controller/petController.js'
 import { createNewPet, updateCards, editPet } from '../../controller/CRUD.js'
+import { noItems } from '../../controller/dashboard.js'
 
 let id
 
@@ -68,6 +69,7 @@ const submitRegister = () => {
     gravity: "bottom", 
     position: "right"
   }).showToast()
+  noItems()
 }
 
 const submitEdit = () => {

@@ -27,6 +27,7 @@ for (let item of elements.dashboard.$menu) {
     }
   })
 }
+
 noItems()
 updateCards()
 
