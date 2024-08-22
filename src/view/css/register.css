@@ -1,0 +1,120 @@
+@import "utilities.css";
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+}
+
+.typography {
+  font-family: Kalnia;
+  color: var(--tertiary-color);
+  font-size: 1.8rem;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: var(--secondary-color);
+}
+
+.card-register {
+  border-radius: 15px;
+  box-shadow: 0px 0px 6px var(--black);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 70vw;
+  height: 80vh;
+  background-color: white;
+}
+
+.form-register {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8%;
+}
+
+.ilustracao-registro {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 50%;
+  height: 100%;
+  border-radius: 15px;
+  background-color: var(--background-color);
+}
+
+.image-register {
+  width: 100%;
+}
+
+.form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  gap: 1rem;
+}
+
+.field-form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.label-form {
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.input-form {
+  padding: 0.8rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  outline: none;
+  border: none;
+  box-shadow: 0px 0px 3px;
+  border-radius: 8px;
+}
+
+.button-submit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.8rem 0rem;
+  width: 100%;
+  margin-top: 0.5rem;
+  border: none;
+  border-radius: 8px;
+  background-color: var(--tertiary-color);
+  color: white;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.button-submit:hover {
+  filter: brightness(95%);
+}
+
+.have-an-account {
+  margin-top: auto;
+}
+
+.go-login {
+  text-decoration: none;
+  color: var(--tertiary-color);
+}
+
+.go-login:hover {
+  text-decoration: underline;
+}
