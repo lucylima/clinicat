@@ -1,8 +1,36 @@
-import { User } from "../model/User.js";
+import { database } from '../database/database'
 
-const createUser = (name, email, password) => {
-  let pet = new User(name, email, password);
-  return pet;
-};
+const createUser = async (user) => {
+  const { name, email, password } = user
+  const newUser = await database.user.create({
+    data: {
+      user
+    }
+  })
+}
 
-export { createUser };
+const findUser = async (user) => {
+  const { username, email, password } = user
+  const loginAuth = await database.user.findUniqueOrThrow({
+    where: {
+      OR: [
+        {
+          username
+        },
+        {
+          email
+        }
+      ],
+      AND: {
+        password
+      }
+    }
+  })
+  if (loginAuth) {
+    return true
+  } else {
+    return 'senha ou usuário incorretos'
+  }
+}
+
+export { findUser }

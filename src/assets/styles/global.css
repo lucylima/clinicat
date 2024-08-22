@@ -1,0 +1,17 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Kalnia:wght@100..700&display=swap");
+
+:root {
+  --primary-color: #f29bdb;
+  --secondary-color: #f2d0e9;
+  --tertiary-color: #6a66f2;
+  --black: #090020;
+  --background-color: #ffd8f3;
+  --red: #e04249;
+}
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+}
