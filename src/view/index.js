@@ -1,6 +1,6 @@
+import { createUser } from '../../controller/userController.js'
+import { readLocalStorage } from '../../model/UserDatabase.js'
 import { elements } from './js/elements.js'
-import { readLocalStorage } from '../model/UserDatabase.js'
-import { createUser } from '../controller/userController.js'
 
 const login = () => {
   const database = readLocalStorage()
