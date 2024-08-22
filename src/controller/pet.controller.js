@@ -1,50 +1,100 @@
-import {
-  getLocalStorage,
-  readLocalStorage,
-  setLocalStorage,
-} from "../model/Database.js";
-import { createCards } from "../view/js/dashboard-cards.js";
+import { database } from '../database/database.js'
 
-const createNewPet = (pet) => {
-  const database = getLocalStorage();
-  database.push(pet);
-  setLocalStorage(database);
-};
-
-const deletePet = (pet) => {
-  let confirmAction = confirm("Deseja realmente deletar esse pet?");
-  if (confirmAction) {
-    const database = readLocalStorage();
-    let index = database.findIndex((item) => item.id == pet.id);
-    database.splice(index, 1);
-    setLocalStorage(database);
-    Toastify({
-      text: 'Pet deletado com sucesso!',
-      duration: 3000,
-      style: {
-        background:
-          'linear-gradient(25deg, rgba(242,111,111,1) 0%, rgba(253,45,45,1) 100%)',
-      },
-      gravity: "bottom", 
-      position: "right"
-    }).showToast()
+const createPet = async (pet) => {
+  try {
+    const { name, breed, speciality, owner, appointmentDate } = pet
+    const newPet = await database.pet.create({
+      data: {
+        pet
+      }
+    })
+    return 'Pet criado com sucesso!'
+  } catch (error) {
+    return error
   }
-  updateCards();
-};
+}
 
-const editPet = (pet) => {
-  const database = readLocalStorage();
-  let index = database.findIndex((item) => item.id === pet.id);
-  database[index] = pet;
-  setLocalStorage(database);
-  updateCards();
-};
+const findPet = async (pet) => {
+  try {
+    const { name, owner } = pet
+    const foundPet = await database.pet.findUniqueOrThrow({
+      where: {
+        AND: {
+          owner_id: owner,
+          name
+        }
+      }
+    })
+    if (foundPet) {
+      return foundPet
+    } else {
+      return 'Nenhum pet foi achado'
+    }
+  } catch (error) {
+    return error
+  }
+}
 
-const updateCards = () => {
-  const database = readLocalStorage();
-  const cards = document.querySelectorAll(".pet-card");
-  for (let card of cards) card.parentNode.removeChild(card);
-  database.forEach(createCards);
-};
+const updatePet = async (pet) => {
+  try {
+    const { name, breed, speciality, appointmentDate, owner } = pet
+    const petID = await database.user.findUniqueOrThrow({
+      where: {
+        AND: {
+          owner_id: owner,
+          name
+        }
+      },
+      select: {
+        id: true
+      }
+    })
+    const updatedPet = await database.pet.update({
+      where: { id: petID },
+      data: {
+        name,
+        breed,
+        speciality,
+        appointmentDate
+      }
+    })
+    if (updatedPet) {
+      return 'Pet editado com sucesso'
+    } else {
+      return 'Erro na edição do pet'
+    }
+  } catch (error) {
+    return error
+  }
+}
 
-export { createNewPet, deletePet, editPet, updateCards };
+const deletePet = async (pet) => {
+  try {
+    const { name, owner } = pet
+    const petID = await database.pet.findUniqueOrThrow({
+      where: {
+        AND: {
+          owner_id: owner,
+          name
+        }
+      },
+      select: {
+        id: true
+      }
+    })
+    const deletedPet = await database.pet.delete({
+      where: {
+        id: petID
+      }
+    })
+    if (deletedPet) {
+      return 'Pet deletado com sucesso'
+    } else {
+      return 'Erro ao deletar pet'
+    }
+  } catch (error) {
+    return error
+  }
+}
+
+export { createPet, findPet, updatePet, deletePet }

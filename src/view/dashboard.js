@@ -32,3 +32,9 @@ noItems()
 updateCards()
 
 export { noItems }
+const updateCards = () => {
+  const database = readLocalStorage();
+  const cards = document.querySelectorAll(".pet-card");
+  for (let card of cards) card.parentNode.removeChild(card);
+  database.forEach(createCards);
+};

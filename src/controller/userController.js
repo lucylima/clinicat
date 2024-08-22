@@ -45,7 +45,7 @@ const findUser = async (user) => {
 const updateUser = async (user) => {
   try {
     const { id, username, email, password } = user
-    const updadteUser = await database.user.update({
+    const updatedUser = await database.user.update({
       where: id,
       data: user
     })

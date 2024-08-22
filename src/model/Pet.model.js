@@ -1,16 +1,17 @@
 class Pet {
-  constructor(id, petName, breed, speciality, petOwner) {
-    this.id = id
-    this.petName = petName
+  constructor(name, breed, speciality, owner, appointmentDate) {
+    this.name = name
     this.breed = breed
     this.speciality = speciality
-    this.petOwner = petOwner
+    this.owner = owner
+    this.appointmentDate = appointmentDate
   }
 }
 
-const createPet = (id, petName, breed, speciality, petOwner) => {
-  const pet = new Pet(id, petName, breed, speciality, petOwner);
-  return pet;
-};
+const createPet = (newPet) => {
+  const { name, breed, speciality, owner, appointmentDate } = newPet
+  const pet = new Pet(name, breed, speciality, owner, appointmentDate)
+  return pet
+}
 
-export { createPet };
+export { createPet }
