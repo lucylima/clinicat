@@ -1,0 +1,26 @@
+Pet:
+  ☐ CRUD:
+    ☐ CREATE
+    ☐ READ
+    ☐ UPDATE
+    ☐ DELETE
+  ☐ Telas:
+    ☐ Criar pet
+    ☐ Atualizar pet
+    ☐ Remover pet
+    ☐ Exibir pets
+  ☐ Trocar fotos por ilustrações
+
+Usuário: 
+  ☐ Session storage para armazenar o ID do usuário
+  ☐ Local storage para dark mode persistente
+  ☐ CRUD:
+    ☐ CREATE
+    ☐ READ
+    ☐ UPDATE
+    ☐ DELETE
+  ☐ Telas:
+    ☐ Login
+    ☐ Cadastre-se
+    ☐ Editar usuário
+    ☐ Configurações
