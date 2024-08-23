@@ -1,5 +1,6 @@
 Pet:
-  ✔ Model pet @done(24-08-22 23:58)
+  Prisma:
+    ✔ Model pet @done(24-08-22 23:58)
   CRUD:
     ☐ CREATE
     ☐ READ
@@ -15,7 +16,8 @@ Pet:
 Usuário: 
   ☐ Session storage para armazenar o ID do usuário
   ☐ Local storage para dark mode persistente
-  ✔ Model usuário @done(24-08-22 23:58)
+  Prisma:
+     ✔ Model usuário @done(24-08-22 23:58)
   CRUD:
     ☐ CREATE
     ☐ READ
