@@ -2,8 +2,8 @@ import { database } from '../database/database.js'
 
 const createUser = async (user) => {
   try {
-    const { name, username, email, password } = user
-    const newUser = await database.user.create({
+    const { name, username, email, password, telephone, gender } = user
+    await database.user.create({
       data: {
         user
       }
@@ -35,7 +35,7 @@ const findUser = async (user) => {
     if (loginAuth) {
       return true
     } else {
-      return 'Senha ou usuário incorretos'
+      return false
     }
   } catch (error) {
     return error
@@ -44,7 +44,7 @@ const findUser = async (user) => {
 
 const updateUser = async (user) => {
   try {
-    const { id, username, email, password } = user
+    const { id, name, username, email, password, telephone, gender } = user
     const updatedUser = await database.user.update({
       where: id,
       data: user

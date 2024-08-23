@@ -9,32 +9,33 @@ datasource db {
 }
 
 model User {
-  id            String       @id @default(cuid())
-  username      String       @unique
-  telephone     String
-  gender        String
-  email         String       @unique
-  password      String
-  pets          Pet[]
-  Appointment   Appointment? @relation(fields: [appointmentId], references: [id])
-  appointmentId Int?
+  id           String        @id @default(cuid())
+  name         String
+  username     String        @unique
+  telephone    String
+  gender       String
+  email        String        @unique
+  password     String
+  pets         Pet[]
+  appointments Appointment[]
 }
 
 model Pet {
-  id            String       @id @default(cuid())
-  name          String
-  breed         String
-  User          User?        @relation(fields: [userId], references: [id])
-  userId        String?
-  Appointment   Appointment? @relation(fields: [appointmentId], references: [id])
-  appointmentId Int?
+  id           String        @id @default(cuid())
+  name         String
+  breed        String
+  User         User?         @relation(fields: [userId], references: [id])
+  userId       String?
+  appointments Appointment[]
 }
 
 model Appointment {
   id         Int      @id @default(autoincrement())
-  pet        Pet[]
-  user       User[]
   speciality String
   date       DateTime
   time       DateTime
+  User       User?    @relation(fields: [userId], references: [id])
+  userId     String?
+  Pet        Pet?     @relation(fields: [petId], references: [id])
+  petId      String?
 }

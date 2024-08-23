@@ -28,10 +28,10 @@ Usuário:
   Prisma:
     ✔ Model usuário @done(24-08-22 23:58)
   CRUD:
-    ☐ CREATE
-    ☐ READ
-    ☐ UPDATE
-    ☐ DELETE
+    ✔ CREATE @done(24-08-23 15:33)
+    ✔ READ @done(24-08-23 15:38)
+    ✔ UPDATE @done(24-08-23 15:39)
+    ✔ DELETE @done(24-08-23 15:59)
   Telas:
     ☐ Login
     ☐ Cadastro
