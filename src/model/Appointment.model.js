@@ -13,3 +13,5 @@ const newAppointment = (appointment) => {
   const createdAppointment = new Appointment(speciality, date, time, pet, owner)
   return createdAppointment
 }
+
+export { newAppointment }

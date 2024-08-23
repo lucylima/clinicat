@@ -2,7 +2,7 @@ import { database } from '../database/database.js'
 
 const createPet = async (pet) => {
   try {
-    const { name, breed, speciality, owner, appointmentDate } = pet
+    const { name, breed, speciality, owner} = pet
     const newPet = await database.pet.create({
       data: {
         pet

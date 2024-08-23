@@ -1,16 +1,15 @@
 class Pet {
-  constructor(name, breed, speciality, owner, appointmentDate) {
+  constructor(name, breed, speciality, owner) {
     this.name = name
     this.breed = breed
     this.speciality = speciality
     this.owner = owner
-    this.appointmentDate = appointmentDate
   }
 }
 
 const newPet = (pet) => {
-  const { name, breed, speciality, owner, appointmentDate } = pet
-  const createdPet = new Pet(name, breed, speciality, owner, appointmentDate)
+  const { name, breed, speciality, owner} = pet
+  const createdPet = new Pet(name, breed, speciality, owner)
   return createdPet
 }
 
