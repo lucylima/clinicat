@@ -1,6 +1,8 @@
 Geral:
-  ☐ Trocar fotos dos cards por ilustrações
-  ☐ Atribuir créditos
+  ☐ trocar fotos dos cards por ilustrações
+  /* https://www.figma.com/community/file/1034368792791687764 */
+  ☐ perfil de usuário com avatares personalizados
+  ☐ atribuir créditos
   /* <a href="https://storyset.com/friends">Friends illustrations by Storyset</a> */
 Pet:
   Prisma:
@@ -35,3 +37,8 @@ Usuário:
     ☐ Cadastro
     ☐ Editar usuário
     ☐ Configurações
+
+Dashboard:
+  ☐ sidebar
+  ☐ container principal
+  ☐ botões
