@@ -14,8 +14,11 @@ Pet:
   ☐ Trocar fotos por ilustrações
 
 Usuário: 
-  ☐ Session storage para armazenar o ID do usuário
-  ☐ Local storage para dark mode persistente
+  Session storage:
+    ✔ Session storage para armazenar o ID do usuário @done(24-08-23 10:03)
+    ✔ Session storage para deletar o id ao sair @done(24-08-23 10:03)
+    ✔ Session storage para definir o id ao entrar @done(24-08-23 10:03)
+  ✔ Local storage para dark mode persistente @done(24-08-23 10:27)
   Prisma:
      ✔ Model usuário @done(24-08-22 23:58)
   CRUD:

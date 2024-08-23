@@ -1,4 +1,4 @@
-import { createUser } from '../controller/userController.js'
+import { createUser } from '../controller/user.controller.js'
 import { readLocalStorage, setLocalStorage } from '../../model/UserDatabase.js'
 import { elements } from './elements.js'
 
