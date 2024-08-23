@@ -8,10 +8,10 @@ class Pet {
   }
 }
 
-const createPet = (newPet) => {
-  const { name, breed, speciality, owner, appointmentDate } = newPet
-  const pet = new Pet(name, breed, speciality, owner, appointmentDate)
-  return pet
+const newPet = (pet) => {
+  const { name, breed, speciality, owner, appointmentDate } = pet
+  const createdPet = new Pet(name, breed, speciality, owner, appointmentDate)
+  return createdPet
 }
 
-export { createPet }
+export { newPet }

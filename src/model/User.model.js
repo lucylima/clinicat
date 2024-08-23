@@ -9,9 +9,17 @@ class User {
   }
 }
 
-const newUser = (name, telephone, gender, username, email, password) => {
-  const user = new User(name, telephone, gender, username, email, password)
-  return user
+const newUser = (user) => {
+  const { name, telephone, gender, username, email, password } = user
+  const createdUser = new User(
+    name,
+    telephone,
+    gender,
+    username,
+    email,
+    password 
+  )
+  return createdUser
 }
 
 export { newUser }
