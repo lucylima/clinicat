@@ -1,14 +1,13 @@
 class User {
-  constructor(name, email, password) {
+  constructor(name, username, email, password) {
     this.name = name
+    this.username = username
     this.email = email
     this.password = password
   }
 }
 
-const createUser = (name, email, password) => {
-  let pet = new User(name, email, password);
-  return pet;
-};
-
-export { createUser };
+const newUser = (name, username, email, password) => {
+  let user = new User(name,username,  email, password)
+  return user
+}
