@@ -38,6 +38,19 @@ Usuário:
     ☐ Editar usuário
     ☐ Configurações
 
+Consultas:
+  ✔ Model consulta @done(24-08-23 15:16)
+  CRUD:
+    ☐ CREATE
+    ☐ READ
+    ☐ UPDATE
+    ☐ DELETE
+  Telas: 
+    ☐ exibição das consultas em tabela
+    ☐ marcar consulta
+    ☐ desmarcar consulta
+    ☐ editar consulta
+
 Dashboard:
   ☐ sidebar
   ☐ container principal
