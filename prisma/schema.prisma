@@ -9,11 +9,13 @@ datasource db {
 }
 
 model User {
-  id       String @id @default(cuid())
-  username String @unique
-  email    String @unique
-  password String
-  pets     Pet[]
+  id        String @id @default(cuid())
+  username  String @unique
+  telephone String
+  gender    String
+  email     String @unique
+  password  String
+  pets      Pet[]
 }
 
 model Pet {
