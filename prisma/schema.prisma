@@ -7,3 +7,21 @@ datasource db {
   url       = env("DATABASE_URL")
   directUrl = env("DIRECT_URL")
 }
+
+model User {
+  id       String @id @default(cuid())
+  username String @unique
+  email    String @unique
+  password String
+  pets     Pet[]
+}
+
+model Pet {
+  id              String   @id @default(cuid())
+  name            String
+  breed           String
+  speciality      String
+  appointmentDate DateTime
+  User            User?    @relation(fields: [userId], references: [id])
+  userId          String?
+}

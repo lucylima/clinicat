@@ -1,10 +1,11 @@
 Pet:
-  ☐ CRUD:
+  ✔ Model pet @done(24-08-22 23:58)
+  CRUD:
     ☐ CREATE
     ☐ READ
     ☐ UPDATE
     ☐ DELETE
-  ☐ Telas:
+  Telas:
     ☐ Criar pet
     ☐ Atualizar pet
     ☐ Remover pet
@@ -14,13 +15,14 @@ Pet:
 Usuário: 
   ☐ Session storage para armazenar o ID do usuário
   ☐ Local storage para dark mode persistente
-  ☐ CRUD:
+  ✔ Model usuário @done(24-08-22 23:58)
+  CRUD:
     ☐ CREATE
     ☐ READ
     ☐ UPDATE
     ☐ DELETE
-  ☐ Telas:
+  Telas:
     ☐ Login
-    ☐ Cadastre-se
+    ☐ Cadastro
     ☐ Editar usuário
     ☐ Configurações

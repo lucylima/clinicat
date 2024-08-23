@@ -1,8 +1,8 @@
-import { database } from '../database/database'
+import { database } from '../database/database.js'
 
 const createUser = async (user) => {
   try {
-    const { name, email, password } = user
+    const { name, username, email, password } = user
     const newUser = await database.user.create({
       data: {
         user

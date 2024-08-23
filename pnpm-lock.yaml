@@ -22,7 +22,7 @@ importers:
         specifier: ^5.18.0
         version: 5.18.0
       vite:
-        specifier: ^5.4.1
+        specifier: ^5.4.2
         version: 5.4.2
 
 packages:
