@@ -7,9 +7,9 @@ class Pet {
   }
 }
 
-const newPet = (pet) => {
-  const { name, breed, speciality, owner } = pet
-  const createdPet = new Pet(name, breed, speciality, owner)
+const newPet = (name, breed, owner) => {
+  const { name, breed, owner } = pet
+  const createdPet = new Pet(name, breed, owner)
   return createdPet
 }
 
