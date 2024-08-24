@@ -1,58 +1,31 @@
 Geral:
-  ☐ trocar fotos dos cards por ilustrações
-  /* https://www.figma.com/community/file/1034368792791687764 */
-  ☐ perfil de usuário com avatares personalizados
-  ☐ atribuir créditos
-  /* <a href="https://storyset.com/friends">Friends illustrations by Storyset</a> */
-Pet:
-  Prisma:
-    ✔ Model pet @done(24-08-22 23:58)
-  CRUD:
-    ✔ CREATE @done(24-08-23 19:18)
-    ✔ READ @done(24-08-23 20:12)
-    ☐ UPDATE
-    ☐ DELETE
-  Telas:
-    ☐ Criar pet
-    ☐ Atualizar pet
-    ☐ Remover pet
-    ☐ Exibir pets (cards)
-    ☐ Exibir pets (lista)
+  configurar servidor
+Rotas:
+  Pet:
+    Prisma:
+      ✔ Model pet @done(24-08-22 23:58)
+    CRUD:
+      ✔ CREATE @done(24-08-23 19:18)
+      ✔ READ @done(24-08-23 20:12)
+      ☐ UPDATE
+      ☐ DELETE
+    ☐ Rota
 
-Usuário: 
-  Session storage:
-    ✔ Session storage para armazenar o ID do usuário @done(24-08-23 10:03)
-    ✔ Session storage para deletar o id ao sair @done(24-08-23 10:03)
-    ✔ Session storage para definir o id ao entrar @done(24-08-23 10:03)
-  ✔ Local storage para dark mode persistente @done(24-08-23 10:27)
-  Prisma:
-    ✔ Model usuário @done(24-08-22 23:58)
-  CRUD:
-    ✔ CREATE @done(24-08-23 15:33)
-    ✔ READ @done(24-08-23 15:38)
-    ✔ UPDATE @done(24-08-23 15:39)
-    ✔ DELETE @done(24-08-23 15:59)
-  Telas:
-    ☐ Login
-    ☐ Cadastro
-    ☐ Editar usuário
-    ☐ Configurações
+  Usuário: 
+    Prisma:
+      ✔ Model usuário @done(24-08-22 23:58)
+    CRUD:
+      ✔ CREATE @done(24-08-23 15:33)
+      ✔ READ @done(24-08-23 15:38)
+      ✔ UPDATE @done(24-08-23 15:39)
+      ✔ DELETE @done(24-08-23 15:59)
+    ☐ Rota
 
-Consultas:
-  ✔ Model consulta @done(24-08-23 15:16)
-  ✔ classe consulta @done(24-08-23 19:08)
-  CRUD:
-    ☐ CREATE
-    ☐ READ
-    ☐ UPDATE
-    ☐ DELETE
-  Telas: 
-    ☐ exibição das consultas em tabela
-    ☐ marcar consulta
-    ☐ desmarcar consulta
-    ☐ editar consulta
-
-Dashboard:
-  ☐ sidebar
-  ☐ container principal
-  ☐ botões
+  Consultas:
+    ✔ Model consulta @done(24-08-23 15:16)
+    CRUD:
+      ☐ CREATE
+      ☐ READ
+      ☐ UPDATE
+      ☐ DELETE
+    ☐ Rota
