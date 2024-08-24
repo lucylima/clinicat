@@ -1,5 +1,5 @@
 Geral:
-  configurar servidor
+  ✔ configurar servidor @done(23-08-24 22:33)
 Rotas:
   Pet:
     Prisma:
@@ -9,7 +9,7 @@ Rotas:
       ✔ READ @done(24-08-24 00:54)
       ✔ UPDATE @done(24-08-24 00:54)
       ✔ DELETE @done(24-08-24 00:54)
-    ☐ Rota
+    ✔ Rota @done(24-08-24 01:28)
 
   Usuário: 
     Prisma:
@@ -24,8 +24,8 @@ Rotas:
   Consultas:
     ✔ Model consulta @done(24-08-23 15:16)
     CRUD:
-      ☐ CREATE
-      ☐ READ
-      ☐ UPDATE
-      ☐ DELETE
+      ✔ CREATE @done(24-08-24 02:06)
+      ✔ READ @done(24-08-24 01:40)
+      ✔ UPDATE @done(24-08-24 02:00)
+      ✔ DELETE @done(24-08-24 02:04)
     ☐ Rota

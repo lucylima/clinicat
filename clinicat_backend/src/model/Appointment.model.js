@@ -8,8 +8,7 @@ class Appointment {
   }
 }
 
-const newAppointment = (appointment) => {
-  const { speciality, date, time, pet, owner } = appointment
+const newAppointment = (speciality, date, time, pet, owner) => {
   const createdAppointment = new Appointment(speciality, date, time, pet, owner)
   return createdAppointment
 }
