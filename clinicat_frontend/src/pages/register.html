@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      type="image/png"
+      sizes="96x96"
+      rel="icon"
+      href="../assets/favicon.png"
+    />
+    <link rel="stylesheet" href="../css/register.css" />
+    <title>Registrar-se</title>
+  </head>
+  <body>
+    <main class="container">
+      <section class="card-register">
+        <div class="illustration-register">
+          <img
+            src="../assets/register/girl-with-dog-illustration2.png"
+            class="image-register"
+            alt="garota branca de cabelo curto roxo segurando um gato roxo enquanto há dois gatos atrás e cima dela"
+          />
+        </div>
+        <div class="form-register">
+          <form class="form-register form">
+            <h3 class="typography title-call-to-action">Clinicat</h3>
+
+            <div class="field-form">
+              <label for="nome" class="label-form">Nome Completo</label>
+              <input
+                type="text"
+                name="nome"
+                id="nameField"
+                class="input-form user"
+                required
+              />
+            </div>
+
+            <div class="field-form">
+              <label for="email" class="label-form">E-mail</label>
+              <input
+                type="email"
+                name="email"
+                id="emailField"
+                class="input-form email"
+                required
+              />
+            </div>
+
+            <div class="field-form">
+              <label for="password" class="label-form">Senha</label>
+              <input
+                type="password"
+                name="password"
+                id="passwordField"
+                class="input-form"
+                required
+              />
+            </div>
+            <input type="submit" value="Registrar" class="button-submit" />
+            <p class="have-an-account">
+              Já tem cadastro?
+              <a href="../../index.html" class="go-login">Entrar</a>
+            </p>
+          </form>
+        </div>
+      </section>
+    </main>
+    <script src="../js/register.js" type="module"></script>
+  </body>
+</html>

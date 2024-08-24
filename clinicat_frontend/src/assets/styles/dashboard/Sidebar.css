@@ -1,0 +1,78 @@
+@import "utilities.css";
+
+.typography{
+  font-family: Kalnia;
+  color: var(--tertiary-color);
+  font-size: 2rem;
+  margin-top: 1rem;
+  cursor: default;
+}
+
+.sidebar {
+  gap: 1rem;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 16rem;
+  align-items: center;
+  background-color: var(--background-color);
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  width: 100%;
+  padding: 0.8rem;
+}
+
+.menu-option {
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  padding: 1rem 0.5rem;
+  gap: 1rem;
+  width: 100%;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: 0.2s;
+}
+
+.menu-option:hover {
+  backdrop-filter: brightness(90%);
+}
+
+.user-profile {
+  display: flex;
+  align-items: center;
+  padding: 1rem 0.8rem;
+  gap: 0.8rem;
+  backdrop-filter: brightness(90%);
+  margin-top: auto;
+  width: 100%;
+}
+
+.user-account {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.user-photo {
+  background-image: url("../assets/dashboard/cat-profile.jpeg");
+  background-size: cover;
+  border-radius: 100%;
+  width: 40px;
+  height: 40px;
+}
+
+.user-name{
+  font-size: 0.9rem;
+}
+
+.user-email {
+  font-size: 0.8rem;
+}
