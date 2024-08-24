@@ -42,8 +42,7 @@ const updateAppointment = async (req, res) => {
 
 const deleteAppointment = async (req, res) => {
   try {
-    const { date } = req.params
-    const { pet, owner } = req.body
+    const { pet, owner, date } = req.body
     const deletedAppointment = await database.appointment.delete({
       where: {
         petId: pet,
