@@ -5,8 +5,8 @@ Rotas:
     Prisma:
       ✔ Model pet @done(24-08-22 23:58)
     CRUD:
-      ✔ CREATE @done(24-08-23 19:18)
-      ✔ READ @done(24-08-23 20:12)
+      ☐ CREATE
+      ☐ READ
       ☐ UPDATE
       ☐ DELETE
     ☐ Rota
@@ -15,11 +15,11 @@ Rotas:
     Prisma:
       ✔ Model usuário @done(24-08-22 23:58)
     CRUD:
-      ✔ CREATE @done(24-08-23 15:33)
-      ✔ READ @done(24-08-23 15:38)
-      ✔ UPDATE @done(24-08-23 15:39)
-      ✔ DELETE @done(24-08-23 15:59)
-    ☐ Rota
+      ✔ CREATE @done(24-08-23 22:43)
+      ✔ READ @done(24-08-23 23:10)
+      ✔ UPDATE @done(24-08-23 22:47)
+      ✔ DELETE @done(24-08-23 23:10)
+    ✔ Rota usuário @done(24-08-23 23:13)
 
   Consultas:
     ✔ Model consulta @done(24-08-23 15:16)
