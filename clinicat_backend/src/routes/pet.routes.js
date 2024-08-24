@@ -5,7 +5,7 @@ import {
   deletePet,
   findPet,
   updatePet
-} from '../controller/pet.controller'
+} from '../controller/pet.controller.js'
 
 const petRouter = Router()
 

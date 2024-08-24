@@ -8,7 +8,6 @@ class Pet {
 }
 
 const newPet = (name, breed, owner) => {
-  const { name, breed, owner } = pet
   const createdPet = new Pet(name, breed, owner)
   return createdPet
 }
