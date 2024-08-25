@@ -1,5 +1,5 @@
 body,
-html {  
+html {
   scroll-behavior: smooth;
 }
 
@@ -95,11 +95,10 @@ html {
 .call-to-action-container {
   display: flex;
   flex-direction: row;
-  justify-content: center;
-  padding: 0 4rem;
-  height: 60vh;
+  justify-content: space-between;
+  padding: 0 6rem;
+  height: 70vh;
   width: 100%;
-  gap: 3rem;
   margin-top: 2rem;
 }
 
@@ -107,21 +106,19 @@ html {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  width: 60%;
-  gap: 1rem;
+  width: 50%;
+  gap: 0.8rem;
 }
 
 .call-to-action-title {
-  margin-top: 4rem;
-  width: 100%;
+  margin-top: 2.5rem;
   font-size: 2.5rem;
-  font-family: Kalnia;
-  font-weight: 500;
-  color: var(--tertiary-color)
+  font-weight: 800;
+  color: var(--tertiary-color);
 }
 
 .call-to-action-description {
-  font-size: 1.2rem;
+  font-size: 1.4rem;
 }
 
 .call-to-action-link {
@@ -137,6 +134,7 @@ html {
   display: flex;
   align-items: center;
   justify-content: center;
+  padding-right: 2rem;
 }
 
 .call-to-action-image {
