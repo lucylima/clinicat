@@ -1,11 +1,10 @@
 body,
-html {
-  background-color: var(--background-color);
+html {  
   scroll-behavior: smooth;
 }
 
 .logo {
-  font-size: 2rem;
+  font-size: 2.2rem;
   cursor: default;
   user-select: none;
   font-weight: bold;
@@ -54,7 +53,7 @@ html {
 .header-actions {
   display: flex;
   align-items: center;
- 
+
   flex-direction: row;
   gap: 2rem;
 }
@@ -84,4 +83,62 @@ html {
 .register:hover {
   filter: brightness(120%);
   transition: 0.5s;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+}
+
+.call-to-action-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 0 4rem;
+  height: 60vh;
+  width: 100%;
+  gap: 3rem;
+  margin-top: 2rem;
+}
+
+.call-to-action-main {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 60%;
+  gap: 1rem;
+}
+
+.call-to-action-title {
+  margin-top: 4rem;
+  width: 100%;
+  font-size: 2.5rem;
+  font-family: Kalnia;
+  font-weight: 500;
+  color: var(--tertiary-color)
+}
+
+.call-to-action-description {
+  font-size: 1.2rem;
+}
+
+.call-to-action-link {
+  text-decoration: none;
+  padding: 0.7rem 1.5rem;
+  border-radius: 5px;
+  text-align: center;
+  margin-top: auto;
+  margin-bottom: 5rem;
+}
+
+.call-to-action-secondary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.call-to-action-image {
+  width: 25rem;
 }
