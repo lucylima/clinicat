@@ -123,11 +123,10 @@ html {
 
 .call-to-action-link {
   text-decoration: none;
-  padding: 0.7rem 1.5rem;
+  padding: 1rem 3rem;
   border-radius: 5px;
   text-align: center;
-  margin-top: auto;
-  margin-bottom: 5rem;
+  margin-top: 2rem;
 }
 
 .call-to-action-secondary {
