@@ -10,20 +10,27 @@
       href="./view/assets/favicon.png"
     />
     <link rel="stylesheet" href="./assets/styles/index.css" />
+    <link rel="stylesheet" href="./assets/styles/global.css" />
     <title>Clinicat</title>
   </head>
   <body>
-    <header>
-      <div class="clinicat-typography">Clinicat</div>
+    <header class="header">
+      <div class="clinicat-typography logo">Clinicat</div>
       <nav class="navbar">
         <ul class="navbar-ul">
-          <li class="navbar-ul-li">Como funciona</li>
-          <li class="navbar-ul-li">Serviços</li>
-          <li class="navbar-ul-li">Quem somos</li>
+          <li class="navbar-ul-li">
+            <a href="#how-to" class="navbar-ul-li-a">Como funciona</a>
+          </li>
+          <li class="navbar-ul-li">
+            <a href="#services" class="navbar-ul-li-a">Serviços</a>
+          </li>
+          <!-- <li class="navbar-ul-li">
+            <a href="">Quem somos</a>
+          </li> -->
         </ul>
-        <div class="actions">
-          <a href="" class="actions-link-login">Entrar</a>
-          <a href="" class="actions-link-register">Cadastre-se</a>
+        <div class="header-actions">
+          <a href="" class="header-actions-link login">Entrar</a>
+          <a href="" class="header-actions-link register">Cadastre-se</a>
         </div>
       </nav>
     </header>
@@ -46,7 +53,7 @@
           />
         </div>
       </section>
-      <section class="how-to">
+      <section class="how-to" class="how-to">
         <h2 class="how-to-title">Como funciona?</h2>
         <div class="how-to-steps">
           <div class="how-to-steps-card">
@@ -88,8 +95,8 @@
         </div>
         <h2>Depois desses passos só comparecer a consulta</h2>
       </section>
-      <section class="services">
-        <h2 class="services-title">Serviços que oferecemos:</h2>
+      <section class="services" id="services">
+        <h2 class="services-title">Serviços qxue oferecemos:</h2>
         <ul class="services-list">
           <li class="services-list-item">Ambulatório de Dor</li>
           <li class="services-list-item">Cardiologia</li>

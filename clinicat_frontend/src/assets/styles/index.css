@@ -1,0 +1,87 @@
+body,
+html {
+  background-color: var(--background-color);
+  scroll-behavior: smooth;
+}
+
+.logo {
+  font-size: 2rem;
+  cursor: default;
+  user-select: none;
+  font-weight: bold;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0.5rem 1rem;
+}
+
+.navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2.5rem;
+}
+
+.navbar-ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 0 1rem;
+  height: 100%;
+}
+
+.navbar-ul-li {
+  list-style: none;
+}
+
+.navbar-ul-li-a {
+  text-decoration: none;
+  color: var(--black);
+}
+.navbar-ul-li-a:hover {
+  color: var(--tertiary-color);
+  transition: 0.3s;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+ 
+  flex-direction: row;
+  gap: 2rem;
+}
+
+.header-actions-link {
+  text-decoration: none;
+  padding: 0.7rem 1.5rem;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.login {
+  color: var(--black);
+}
+
+.login:hover {
+  background-color: var(--primary-color);
+  color: var(--black);
+  transition: 0.4s;
+}
+
+.register {
+  background-color: var(--tertiary-color);
+  color: #ffff;
+}
+
+.register:hover {
+  filter: brightness(120%);
+  transition: 0.5s;
+}
