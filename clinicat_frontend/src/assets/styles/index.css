@@ -24,7 +24,6 @@ html {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  gap: 2.5rem;
 }
 
 .navbar-ul {
@@ -32,7 +31,7 @@ html {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  gap: 1.5rem;
+  gap: 0.8rem;
   padding: 0 1rem;
   height: 100%;
 }
@@ -42,7 +41,7 @@ html {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0.7rem 1.5rem;
+  padding: 0.7rem 1rem;
 }
 
 .navbar-ul-li-a {
@@ -58,12 +57,12 @@ html {
   display: flex;
   align-items: center;
   flex-direction: row;
-  gap: 2rem;
+  gap: 1rem;
 }
 
 .header-actions-link {
   text-decoration: none;
-  padding: 0.7rem 1.5rem;
+  padding: 0.7rem 1rem;
   border-radius: 5px;
   text-align: center;
 }
@@ -74,8 +73,8 @@ html {
 
 .login:hover {
   background-color: var(--primary-color);
-  color: var(--black);
-  transition: 0.4s;
+  color:#ffff;
+  transition: 0.3s;
 }
 
 .register {
