@@ -73,7 +73,7 @@ html {
 
 .login:hover {
   background-color: var(--primary-color);
-  color:#ffff;
+  color: #ffff;
   transition: 0.3s;
 }
 
@@ -139,13 +139,14 @@ html {
 }
 
 .call-to-action-image {
-  width: 25rem;
+  width: 30rem;
 }
 
 .how-to {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   padding: 0 6rem;
   height: 90vh;
   width: 100%;
@@ -155,6 +156,7 @@ html {
 .how-to-title {
   margin-top: 1.2rem;
   font-size: 1.8rem;
+  text-align: center;
 }
 
 .how-to-steps {
@@ -196,21 +198,12 @@ html {
   margin-bottom: 2rem;
 }
 
-.services {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 0 6rem;
-  height: 90vh;
-  width: 100%;
-  margin-top: 3rem;
-}
-
 .footer {
   height: 10vh;
   background-color: var(--primary-color);
   font-size: 1rem;
   padding: 1rem 2rem;
   text-align: center;
+  margin-top: 5rem;
   font-weight: bold;
 }
