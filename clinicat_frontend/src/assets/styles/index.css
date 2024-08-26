@@ -100,7 +100,7 @@ html {
   flex-direction: row;
   justify-content: space-between;
   padding: 0 6rem;
-  height: 70vh;
+  height: 85vh;
   width: 100%;
   margin-top: 2rem;
 }
@@ -134,7 +134,7 @@ html {
 
 .call-to-action-secondary {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   padding-right: 2rem;
 }
