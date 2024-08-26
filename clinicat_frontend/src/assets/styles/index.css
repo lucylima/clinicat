@@ -148,7 +148,7 @@ html {
   flex-direction: column;
   align-items: center;
   padding: 0 6rem;
-  height: 80vh;
+  height: 90vh;
   width: 100%;
   margin-top: 2rem;
 }
@@ -195,4 +195,23 @@ html {
 .how-to-subtitle {
   margin-top: auto;
   margin-bottom: 2rem;
+}
+
+.services {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 6rem;
+  height: 90vh;
+  width: 100%;
+  margin-top: 3rem;
+}
+
+.footer {
+  height: 10vh;
+  background-color: var(--primary-color);
+  font-size: 1rem;
+  padding: 1rem 2rem;
+  text-align: center;
+  font-weight: bold;
 }

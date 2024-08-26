@@ -1,10 +1,6 @@
 Geral:
   ☐ trocar fotos dos cards por ilustrações
-  /* https://www.figma.com/community/file/1034368792791687764 */
-  ☐ perfil de usuário com avatares personalizados
   ☐ atribuir créditos
-  /* <a href="https://storyset.com/friends">Friends illustrations by Storyset</a> */
-  <a href="https://www.flaticon.com/br/icones-gratis/nome-de-usuario" title="nome de usuário ícones">Nome de usuário ícones criados por Freepik - Flaticon</a>
 Pet:
   Prisma:
     ✔ Model pet @done(24-08-22 23:58)
@@ -57,6 +53,8 @@ Dashboard:
   ☐ sidebar 
   ☐ container principal
   ☐ botões
+  ☐ perfil de usuário com avatares personalizados
+    /* https://www.figma.com/community/file/1034368792791687764 */
 
 Landing page:
   ✔ navbar (estilização e marcação) @done(24-08-25 12:31)
@@ -64,4 +62,4 @@ Landing page:
     ✔ call-to-action (estilização e marcação) @done(24-08-25 20:17)
     ✔ como (estilização e marcação) @done(24-08-25 21:47)
     ☐ serviços disponiveis (estilização e marcação)
-    ☐ footer (estilização e marcação)
+    ✔ footer (estilização e marcação) @done(24-08-25 22:23)
