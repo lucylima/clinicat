@@ -4,7 +4,7 @@ html {
 }
 
 .logo {
-  font-size: 2.2rem;
+  font-size: 2.4rem;
   cursor: default;
   user-select: none;
   font-weight: bold;
@@ -16,7 +16,7 @@ html {
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  padding: 0.5rem 1rem;
+  padding: 1rem 2.5rem;
 }
 
 .navbar {
@@ -39,6 +39,10 @@ html {
 
 .navbar-ul-li {
   list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.7rem 1.5rem;
 }
 
 .navbar-ul-li-a {
@@ -53,7 +57,6 @@ html {
 .header-actions {
   display: flex;
   align-items: center;
-
   flex-direction: row;
   gap: 2rem;
 }
@@ -138,4 +141,58 @@ html {
 
 .call-to-action-image {
   width: 25rem;
+}
+
+.how-to {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 6rem;
+  height: 80vh;
+  width: 100%;
+  margin-top: 2rem;
+}
+
+.how-to-title {
+  margin-top: 1.2rem;
+  font-size: 1.8rem;
+}
+
+.how-to-steps {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-self: center;
+  justify-content: space-between;
+  width: 100%;
+  gap: 2rem;
+  margin-top: auto;
+}
+
+.how-to-steps-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  width: 15rem;
+}
+
+.how-to-steps-card-image {
+  width: 6.5rem;
+  height: 6.5rem;
+  justify-self: center;
+  filter: brightness(0) saturate(100%) invert(36%) sepia(91%) saturate(2032%)
+    hue-rotate(226deg) brightness(98%) contrast(94%);
+}
+
+.how-to-steps-card-description {
+  font-size: 1.1rem;
+  width: 100%;
+  text-align: center;
+  justify-self: baseline;
+}
+
+.how-to-subtitle {
+  margin-top: auto;
+  margin-bottom: 2rem;
 }
