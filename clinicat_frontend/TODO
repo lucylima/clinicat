@@ -43,9 +43,9 @@ Consultas:
     ☐ editar consulta
 
 Dashboard:
-  ☐ sidebar 
+  ✔ sidebar @done(24-09-01 00:08)
   ☐ container principal
-  ☐ botões
+  ✔ botões @done(24-09-01 00:09)
   ☐ perfil de usuário com avatares personalizados
     /* https://www.figma.com/community/file/1034368792791687764 */
 

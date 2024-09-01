@@ -58,20 +58,41 @@
         <div class="form-create-pet">
           <form class="form">
             <div class="field-group">
-              <div class="field-form">
-                <label for="petOwner" class="label-form">Nome  do tutor</label>
-                <input type="text" name="petOwner" id="petOwnerField" class="form-input petOwnerField" />
-              </div>
+              
   
               <div class="field-form">
                 <label for="petName" class="label-form">Nome do animal</label>
-                <input type="text" name="petName" id="petNameField" class="form-input petNameField" />
+                <input type="text" name="petName" id="petNameField" class="form-input petNameField" required/>
               </div>
             </div>
-          
+            <select name="doctor-speciality" id="doctor-speciality" class="doctor-speciality" required>
+              <option selected="" disabled="" value="">Especialidade</option>
+              <option value="Outra">Não sei / OUTRA</option>
+              <option value="Acupuntura">Acupuntura</option>
+              <option value="Ambulatório de dor">Ambulatório de Dor</option>
+              <option value="Cardiologia">Cardiologia</option>
+              <option value="Castracao">Castração</option>
+              <option value="Clínica geral">Clínica Geral</option>
+              <option value="Clínica cirurgica">Clínica Cirurgica</option>
+              <option value="Dermatologia">Dermatologia</option>
+              <option value="Endocrinologia">Endocrinologia</option>
+              <option value="Especialista em felinos">Especialista em Felinos</option>
+              <option value="Fisioterapia">Fisioterapia</option>
+              <option value="Gastroenterologista">Gastroenterologista</option>
+              <option value="Hematologista">Hematologista</option>
+              <option value="Nefrologista">Nefrologista</option>
+              <option value="Neurologista">Neurologista</option>
+              <option value="Nutricionista">Nutricionista</option>
+              <option value="Odontologia">Odontologia</option>
+              <option value="Oftalmologista">Oftalmologista</option>
+              <option value="Oncologista">Oncologista</option>
+              <option value="Ortopedista">Ortopedista</option>
+              <option value="Paliativismo">Paliativismo</option>
+              <option value="Pneumologista">Pneumologista</option>
+              <option value="Especialista em silvestres">Especialista em Silvestres</option>
+            </select> 
             <div class="field-form">
               <div class="field-animal-type">
-                <h4 class="label-form">Tipo de animal</h4>
                 <div class="field-group">
                   <label for="dog" class="label-radio">
                     Cachorro
@@ -92,32 +113,16 @@
               </div>
             </div>
 
-              <select name="doctor-speciality" id="doctor-speciality" class="doctor-speciality" required>
-                <option selected="" disabled="" value="">Especialidade</option>
-                <option value="Outra">Não sei / OUTRA</option>
-                <option value="Acupuntura">Acupuntura</option>
-                <option value="Ambulatório de dor">Ambulatório de Dor</option>
-                <option value="Cardiologia">Cardiologia</option>
-                <option value="Castracao">Castração</option>
-                <option value="Clínica geral">Clínica Geral</option>
-                <option value="Clínica cirurgica">Clínica Cirurgica</option>
-                <option value="Dermatologia">Dermatologia</option>
-                <option value="Endocrinologia">Endocrinologia</option>
-                <option value="Especialista em felinos">Especialista em Felinos</option>
-                <option value="Fisioterapia">Fisioterapia</option>
-                <option value="Gastroenterologista">Gastroenterologista</option>
-                <option value="Hematologista">Hematologista</option>
-                <option value="Nefrologista">Nefrologista</option>
-                <option value="Neurologista">Neurologista</option>
-                <option value="Nutricionista">Nutricionista</option>
-                <option value="Odontologia">Odontologia</option>
-                <option value="Oftalmologista">Oftalmologista</option>
-                <option value="Oncologista">Oncologista</option>
-                <option value="Ortopedista">Ortopedista</option>
-                <option value="Paliativismo">Paliativismo</option>
-                <option value="Pneumologista">Pneumologista</option>
-                <option value="Especialista em silvestres">Especialista em Silvestres</option>
-              </select> 
+              
+              <select name="payment-method" id="payment-method" class="payment-method" required>
+                <option selected="" disabled="" value="">Método de pagamento</option>
+                <option value="Cartão de credito">Cartão de crédito</option>
+                <option value="Cartão de debito">Cartão de débito</option>
+                <option value="Dinheiro">Dinheiro</option>
+                <option value="Pix">Pix</option>
+                
+               </select>
+
 
             <input type="submit" value="Cadastrar" class="button-submit-pet" />
           </form>

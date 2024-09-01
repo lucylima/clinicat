@@ -1,5 +1,5 @@
 .modal {
-  display: none;
+  /* display: none; */
   position: fixed;
   z-index: 1;
   left: 0px;
@@ -162,6 +162,24 @@
 }
 
 .doctor-speciality {
+  width: 23rem;
+  appearance: none;
+  background-color: transparent;
+  border: none;
+  padding: 1rem;
+  margin: 0;
+  width: 100%;
+  font-family: inherit;
+  font-size: inherit;
+  cursor: inherit;
+  line-height: inherit;
+  outline: 2px solid var(--tertiary-color);
+  border-radius: 15px;
+  color: var(--tertiary-color);
+  margin-top: 0.8rem;
+}
+
+.payment-method {
   width: 23rem;
   appearance: none;
   background-color: transparent;

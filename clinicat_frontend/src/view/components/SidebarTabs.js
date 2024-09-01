@@ -19,14 +19,4 @@ const addSidebarOptions = (menu) => {
   $sidebar.appendChild($menuOption)
 }
 
-for (let item of dashboard.$menu) {
-  item.addEventListener("click", () => {
-    switch (item.id) {
-      case "inicio":
-        dashboard.$menuTitle.innerHTML = "Início"
-        break
-    }
-  })
-}
-
 export { addSidebarOptions }
