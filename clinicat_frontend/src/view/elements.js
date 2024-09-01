@@ -1,11 +1,11 @@
 const dashboard = {
   $container: document.getElementsByClassName('card-container')[0],
-  $noItems: document.getElementsByClassName('no-items')[0],
   $menu: document.getElementsByClassName('menu-option'),
   $menuTitle: document.getElementsByClassName('menu-category')[0],
   $newPetButtons: document.getElementsByClassName('add-new'),
   sidebar: {
-    $menu: document.getElementsByClassName('menu')[0]
+    $menu: document.getElementsByClassName('menu')[0],
+    $tabs: document.getElementsByClassName('menu-option'),
   }
 }
 const modal = {

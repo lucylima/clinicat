@@ -11,6 +11,8 @@ const addSidebarOptions = (menu) => {
   $menuOption.id = id
   $icon.className = icon
   $tabName.textContent = text
+
+  $menuOption.onclick = () => alert($menuOption.id) 
   
   $menuOption.appendChild($icon)
   $menuOption.appendChild($tabName)
