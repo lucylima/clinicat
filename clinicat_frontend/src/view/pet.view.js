@@ -1,11 +1,3 @@
-import { readLocalStorage } from '../../model/Database.js'
-import { elements } from './elements.js'
-import { createPet } from '../../controller/petController.js'
-import { createNewPet, updateCards, editPet } from '../controller/pet.controller.js'
-import { noItems } from './dashboard.js'
-
-let id
-
 const petEditModal = (pet) => {
   id = pet.id
   elements.modalForm.$petNameField.value = pet.petName
@@ -95,24 +87,11 @@ elements.modalForm.$formPet.addEventListener('submit', (e) => {
   }
 })
 
-elements.modal.$closeModal.onclick = () => closeModal()
-window.onclick = (event) => {
-  if (event.target == elements.modal.$modal) closeModal()
-}
-
-export { showModal, closeModal, petRegisterModal, petEditModal }
-
-import { petEditModal } from '../js/dashboard-modal.js'
-import { elements } from '../js/elements.js'
-import { deletePet } from '../controller/pet.controller.js'
-
-const randomInt = Math.floor(Math.random() * 5 + 1)
-
-
 
 const renderPetCards = () => {
   const cards = document.querySelectorAll(".pet-card");
   for (let card of cards) card.parentNode.removeChild(card);
 };
 
-export { createCards }
+export { openNewPetModal };
+

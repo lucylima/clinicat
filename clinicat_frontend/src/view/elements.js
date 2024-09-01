@@ -11,8 +11,8 @@ const dashboard = {
 const modal = {
   $modal: document.getElementsByClassName('modal')[0],
   $closeModal: document.getElementsByClassName('modal-x')[0],
-  showModal: () => (modal.$modal.style.display = 'block'),
-  closeModal: () => {
+  show: () => (modal.$modal.style.display = 'block'),
+  close: () => {
     modalForm.clearModalForm()
     modal.$modal.style.display = 'none'
   }
@@ -45,4 +45,4 @@ const login = {
   clearLoginForm: () => {}
 }
 
-export { dashboard }
+export { dashboard, modal }
