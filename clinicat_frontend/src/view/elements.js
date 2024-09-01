@@ -3,7 +3,10 @@ const dashboard = {
   $noItems: document.getElementsByClassName('no-items')[0],
   $menu: document.getElementsByClassName('menu-option'),
   $menuTitle: document.getElementsByClassName('menu-category')[0],
-  $newPetButtons: document.getElementsByClassName('add-new')
+  $newPetButtons: document.getElementsByClassName('add-new'),
+  sidebar: {
+    $menu: document.getElementsByClassName('menu')[0]
+  }
 }
 const modal = {
   $modal: document.getElementsByClassName('modal')[0],
@@ -41,3 +44,5 @@ const login = {
   $passwordField: document.getElementById('password'),
   clearLoginForm: () => {}
 }
+
+export { dashboard }
