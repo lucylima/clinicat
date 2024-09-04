@@ -31,6 +31,7 @@ const modalForm = {
 }
 const registerForm = {
   $nameField: document.getElementById('nameField'),
+  $usernameField: document.getElementById('usernameField'),
   $emailField: document.getElementById('emailField'),
   $passwordField: document.getElementById('passwordField'),
   $form: document.getElementsByClassName('form-register')[0],
@@ -43,4 +44,4 @@ const login = {
   clearLoginForm: () => {}
 }
 
-export { dashboard, modal, modalForm }  
+export { dashboard, modal, modalForm, login, registerForm }  
