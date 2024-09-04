@@ -55,6 +55,22 @@
   width: 100%;
 }
 
+.field-form-group {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.form-radio-group {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
 .label-form {
   margin-bottom: 0.5rem;
   font-weight: 700;

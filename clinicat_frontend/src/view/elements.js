@@ -5,7 +5,7 @@ const dashboard = {
   $newPetButtons: document.getElementsByClassName('add-new'),
   sidebar: {
     $menu: document.getElementsByClassName('menu')[0],
-    $tabs: document.getElementsByClassName('menu-option'),
+    $tabs: document.getElementsByClassName('menu-option')
   }
 }
 const modal = {
@@ -31,9 +31,11 @@ const modalForm = {
 }
 const registerForm = {
   $nameField: document.getElementById('nameField'),
+  $phoneNumberFieçd: document.getElementById('telephoneField'),
   $usernameField: document.getElementById('usernameField'),
   $emailField: document.getElementById('emailField'),
   $passwordField: document.getElementById('passwordField'),
+  $genderRadio: document.getElementsByClassName('input-radio'),
   $form: document.getElementsByClassName('form-register')[0],
   clearRegisterForm: () => {}
 }
@@ -44,4 +46,4 @@ const login = {
   clearLoginForm: () => {}
 }
 
-export { dashboard, modal, modalForm, login, registerForm }  
+export { dashboard, modal, modalForm, login, registerForm }

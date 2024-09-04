@@ -40,14 +40,14 @@
             </div>
 
             <div class="field-form">
-              <label for="username" class="label-form">Usuário</label>
+              <label for="telephoneField" class="label-form">Telefone</label>
               <input
-                type="text"
-                name="nome"
-                id="usernameField"
+                type="tel"
+                name="telephone"
+                id="telephoneField"
                 class="input-form username"
                 required
-                placeholder="Digite seu usuário"
+                placeholder="71 9 1234-5789"
               />
             </div>
 
@@ -89,34 +89,43 @@
 
             <div class="field-form">
               <label for="username" class="label-form">Gênero</label>
-              <label for="username" class="label-form">Mulher</label>
-              <input
-                type="radio"
-                name="nome"
-                id="usernameField"
-                class="input-form username"
-                required
-                placeholder="Digite seu usuário"
-              />
-              <label for="username" class="label-form">Homem</label>
-              <input
-                type="radio"
-                name="nome"
-                id="usernameField"
-                class="input-form username"
-                required
-                placeholder="Digite seu usuário"
-              />
-              <label for="username" class="label-form">Outro</label>
-              <input
-                type="radio"
-                name="nome"
-                id="usernameField"
-                class="input-form username"
-                required
-                placeholder="Digite seu usuário"
-              />
-
+              <div class="field-form-group">
+                <div class="form-radio-group">
+                  <label for="womanRadio" class="label-radio-form"
+                    >Mulher</label
+                  >
+                  <input
+                    type="radio"
+                    name="gender"
+                    id="womanRadio"
+                    class="input-radio"
+                    required
+                    placeholder="Digite seu usuário"
+                  />
+                </div>
+                <div class="form-radio-group">
+                  <label for="menRadio" class="label-radio-form">Homem</label>
+                  <input
+                    type="radio"
+                    name="gender"
+                    id="menRadio"
+                    class="input-radio"
+                    required
+                    placeholder="Digite seu usuário"
+                  />
+                </div>
+                <div class="form-radio-group">
+                  <label for="otherRadio" class="label-radio-form">Outro</label>
+                  <input
+                    type="radio"
+                    name="gender"
+                    id="otherRadio"
+                    class="input-radio"
+                    required
+                    placeholder="Digite seu usuário"
+                  />
+                </div>
+              </div>
             </div>
 
             <input type="submit" value="Registrar" class="button-submit" />
