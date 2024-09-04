@@ -1,5 +1,5 @@
 const dashboard = {
-  $container: document.getElementsByClassName('card-container')[0],
+  $container: document.getElementsByClassName('multi-container')[0],
   $menu: document.getElementsByClassName('menu-option'),
   $menuTitle: document.getElementsByClassName('menu-category')[0],
   $newPetButtons: document.getElementsByClassName('add-new'),
