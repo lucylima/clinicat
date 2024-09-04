@@ -9,7 +9,7 @@ import {
 
 const petRouter = Router()
 
-petRouter.get('/pet/', allPets)
+petRouter.get('/pet/:id', allPets)
 petRouter.get('/pet', findPet)
 petRouter.post('/pet', createPet)
 petRouter.put('/pet', updatePet)

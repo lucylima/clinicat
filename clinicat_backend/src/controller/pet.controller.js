@@ -37,7 +37,7 @@ const findPet = async (req, res) => {
 
 const allPets = async (req, res) => {
   try {
-    const { id } = req.body 
+    const { id } = req.params
     const petList = await database.pet.findMany({
       where: { userId: id }
     })
