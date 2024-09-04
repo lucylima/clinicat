@@ -12,7 +12,7 @@ const addSidebarOptions = (menu) => {
   $icon.className = icon
   $tabName.textContent = text
   $menuOption.onclick = () => {
-    dashboard.$container.className = `multi-container ${id}-container`
+    dashboard.$container.className = `${id}-container`
   }
 
   $menuOption.appendChild($icon)

@@ -1,3 +1,9 @@
+import axios from 'axios'
+
+const petAxios = axios.create({
+  baseURL: 'http://localhost:3000/pet'
+})
+
 const petEditModal = (pet) => {
   id = pet.id
   elements.modalForm.$petNameField.value = pet.petName
@@ -8,7 +14,7 @@ const petEditModal = (pet) => {
       radio.checked = true
     }
   }
-  elements.modalForm.$submitFormButton.value = 'Atualizar pet'
+  elements.modalForm.$submitFormButton.value = 'Editar pet'
   showModal()
 }
 
@@ -39,10 +45,10 @@ const submitRegister = () => {
     duration: 3000,
     style: {
       background:
-        'linear-gradient(25deg, rgba(106,102,242,1) 1%, rgba(124,120,247,1) 50%, rgba(156,153,255,1) 100%)',
+        'linear-gradient(25deg, rgba(106,102,242,1) 1%, rgba(124,120,247,1) 50%, rgba(156,153,255,1) 100%)'
     },
-    gravity: "bottom", 
-    position: "right"
+    gravity: 'bottom',
+    position: 'right'
   }).showToast()
   noItems()
 }
@@ -50,9 +56,9 @@ const submitRegister = () => {
 const submitEdit = () => {
   let selectedRadio
   for (let radio of elements.modalForm.$animalType)
-  if (radio.checked) {
-    selectedRadio = radio.value
-  }
+    if (radio.checked) {
+      selectedRadio = radio.value
+    }
   const overwritePet = createPet(
     id,
     elements.modalForm.$petNameField.value,
@@ -68,10 +74,10 @@ const submitEdit = () => {
     duration: 3000,
     style: {
       background:
-        'linear-gradient(25deg, rgba(106,102,242,1) 1%, rgba(124,120,247,1) 50%, rgba(156,153,255,1) 100%)',
+        'linear-gradient(25deg, rgba(106,102,242,1) 1%, rgba(124,120,247,1) 50%, rgba(156,153,255,1) 100%)'
     },
-    gravity: "bottom", 
-    position: "right"
+    gravity: 'bottom',
+    position: 'right'
   }).showToast()
 }
 
@@ -87,11 +93,15 @@ elements.modalForm.$formPet.addEventListener('submit', (e) => {
   }
 })
 
+const renderPetCards = async () => {
+  const pets = await petAxios().then((response) => {
+    return response.data.petList
+  })
+  const cards = document.querySelectorAll('.pet-card')
+  for (let card of cards) card.parentNode.removeChild(card)
+  pets.forEach((pet) => {
+    createPetCard(pet)
+  })
+}
 
-const renderPetCards = () => {
-  const cards = document.querySelectorAll(".pet-card");
-  for (let card of cards) card.parentNode.removeChild(card);
-};
-
-export { openNewPetModal };
-
+export { openNewPetModal, renderPetCards }

@@ -1,3 +1,4 @@
+import { renderPetCards } from './pet.view.js'
 import { addSidebarOptions } from './components/SidebarTabs.js'
 import { dashboard, modal } from './elements.js'
 
@@ -16,3 +17,4 @@ addSidebarOptions({
 })
 addSidebarOptions({ text: 'Configurações', id: 'settings', icon: 'bx bxs-cog' })
 
+renderPetCards()
