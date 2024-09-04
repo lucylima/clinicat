@@ -1,4 +1,6 @@
 import axios from 'axios'
+import { database } from '../../../clinicat_backend/src/database/database'
+import { getSession } from '../database/database'
 
 const petAxios = axios.create({
   baseURL: 'http://localhost:3000/pet'
@@ -94,7 +96,11 @@ elements.modalForm.$formPet.addEventListener('submit', (e) => {
 })
 
 const renderPetCards = async () => {
-  const pets = await petAxios().then((response) => {
+  const pets = await petAxios({
+    params: {
+      id: getSession()
+    }
+  }).then((response) => {
     return response.data.petList
   })
   const cards = document.querySelectorAll('.pet-card')
