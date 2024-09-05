@@ -4,9 +4,8 @@ import { database } from '../database/database.js'
 const createUser = async (req, res) => {
   try {
     const { name, username, email, password, telephone, gender } = req.body
-    const user = newUser(name, telephone, gender, username, email, password)
     const createdUser = await database.user.create({
-      data: { user }
+      data: { name, username, email, password, telephone, gender }
     })
     return res.status(201).json({ createdUser })
   } catch (error) {
