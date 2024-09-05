@@ -1,14 +1,20 @@
-import { database } from '../database/database.js'
 import axios from 'axios'
 
 const userAxios = axios.create({
-  baseURL: 'http://localhost:3000/user'
+  baseURL: 'https://kxzy5s-3000.csb.app/user'
 })
 
 const createUser = async (user) => {
   try {
     const { name, username, email, password, telephone, gender } = user
-    
+    await userAxios.post('', {
+      name,
+      username,
+      email,
+      password,
+      telephone,
+      gender
+    })
     return 'Usuário criado com sucesso!'
   } catch (error) {
     return error

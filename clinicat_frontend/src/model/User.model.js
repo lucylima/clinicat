@@ -9,15 +9,14 @@ class User {
   }
 }
 
-const newUser = (user) => {
-  const { name, telephone, gender, username, email, password } = user
+const newUser = (name, telephone, gender, username, email, password) => {
   const createdUser = new User(
     name,
     telephone,
     gender,
     username,
     email,
-    password 
+    password
   )
   return createdUser
 }

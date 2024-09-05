@@ -31,13 +31,12 @@ const modalForm = {
 }
 const registerForm = {
   $nameField: document.getElementById('nameField'),
-  $phoneNumberFieçd: document.getElementById('telephoneField'),
+  $phoneNumberField: document.getElementById('telephoneField'),
   $usernameField: document.getElementById('usernameField'),
   $emailField: document.getElementById('emailField'),
   $passwordField: document.getElementById('passwordField'),
   $genderRadio: document.getElementsByClassName('input-radio'),
-  $form: document.getElementsByClassName('form-register')[0],
-  clearRegisterForm: () => {}
+  $form: document.getElementsByClassName('form-register')[0]
 }
 const login = {
   $formLogin: document.getElementsByClassName('form')[0],
